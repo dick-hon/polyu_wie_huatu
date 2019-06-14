@@ -9,3 +9,5 @@ HON Chun Kin <br/>
 MAK Tsz Hong <br/>
 # v1.0
 An prototype, support database connection
+# v1.0.1
+Supported basic student test layout
