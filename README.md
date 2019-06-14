@@ -7,3 +7,5 @@ CHENG Chongxiao <br/>
 CHIU Chak Pang <br/>
 HON Chun Kin <br/>
 MAK Tsz Hong <br/>
+# v1.0
+An prototype, support database connection
