@@ -1,0 +1,40 @@
+<!-- test.wxml-->
+<view class="container">
+<!-- >
+    <view>Testing by dick</view>
+    <view>{{getData}}</view>
+    <!-- condition 
+    <view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+    <view wx:elif="{{view == 'APP'}}"> APP </view>
+    <view wx:else="{{view == 'MINA'}}"> MINA </view>
+-->
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class="section">
+    <view class="section__title">姓名</view>
+    <input name="xingming" placeholder="请输入姓名" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">性别</view>
+    <radio-group name="xingbie">
+      <label><radio value="男"/>男</label>
+      <label><radio value="女"/>女</label>
+    </radio-group>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">爱好</view>
+    <checkbox-group name="aihao">
+      <label><checkbox value="旅游"/>旅游</label>
+      <label><checkbox value="看书"/>看书</label>
+      <label><checkbox value="电动"/>电动</label>
+      <label><checkbox value="篮球"/>篮球</label>
+    </checkbox-group>
+  </view>
+  
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </view>
+</form>
+</view>

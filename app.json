@@ -1,0 +1,84 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/tab/tab",
+        "pages/form/form",
+        "example/index",
+        "example/button/button",
+        "example/list/list",
+        "example/input/input",
+        "example/slider/slider",
+        "example/uploader/uploader",
+        "example/article/article",
+        "example/badge/badge",
+        "example/flex/flex",
+        "example/footer/footer",
+        "example/gallery/gallery",
+        "example/grid/grid",
+        "example/icons/icons",
+        "example/loadmore/loadmore",
+        "example/panel/panel",
+        "example/preview/preview",
+        "example/progress/progress",
+        "example/actionsheet/actionsheet",
+        "example/dialog/dialog",
+        "example/msg/msg",
+        "example/msg/msg_success",
+        "example/msg/msg_fail",
+        "example/picker/picker",
+        "example/toast/toast",
+        "example/navbar/navbar",
+        "example/tabbar/tabbar",
+        "example/searchbar/searchbar"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#57f",
+        "navigationBarTitleText": "Dick's APP",
+        "navigationBarTextStyle": "black"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "Index",
+                "iconPath": "/img_temp/polyu.png",
+                "selectedIconPath": "/img_temp/polyu.png"
+            },
+            {
+                "pagePath": "pages/logs/logs",
+                "text": "User Data",
+                "iconPath": "/img_temp/cityu.png",
+                "selectedIconPath": "/img_temp/cityu.png"
+            },
+            {
+                "pagePath": "pages/tab/tab",
+                "text": "WebView",
+                "iconPath": "/img_temp/hku.png",
+                "selectedIconPath": "/img_temp/hku.png"
+            },
+            {
+                "pagePath": "pages/form/form",
+                "text": "Form",
+                "iconPath": "/img_temp/hku.png",
+                "selectedIconPath": "/img_temp/hku.png"
+            },
+            {
+                "pagePath": "example/index",
+                "text": "Weui",
+                "iconPath": "/img_temp/hku.png",
+                "selectedIconPath": "/img_temp/hku.png"
+            }
+        ],
+        "selectedColor": "#f55b70"
+    },
+    "debug": true,
+    "sitemapLocation": "sitemap.json"
+}

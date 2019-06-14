@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view>
+    <text>{{msg}}</text>
+  </view>
+  <!-- array1 -->
+  <view wx:for="{{array}}">{{item}}</view>
+  <!-- array2 -->
+    <view wx:for="{{array2}}">{{item}}</view>
+
+<!-- template -->
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}, num: {{num}}
+  </view>
+</template>
+    <!-- use ... to get all variables of name="staffName" -->
+    <template is="staffName" data="{{...staffA}}"></template>
+    <template is="staffName" data="{{...staffB}}"></template>
+    <template is="staffName" data="{{...staffC}}"></template>
+<!-- end template -->
+
+<!-- click button -->
+<view><text>words after click</text></view>
+<view>{{clickMsg}}</view>
+<button bindtap="clickMe">Click</button>
+</view>
