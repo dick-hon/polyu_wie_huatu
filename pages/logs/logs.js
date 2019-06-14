@@ -5,10 +5,10 @@ var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
   data: {
     logs: [],
-    title: "User's Data",
+    title: "User's Info",
     br: '\n',
     id: "id",
-    tabs: ["Page 1", "Page 2", "Page 3"],
+    tabs: ["User's Data", "User's Log", "Page 3"],
     activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0

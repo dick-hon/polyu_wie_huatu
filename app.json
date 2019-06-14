@@ -3,6 +3,8 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/tab/tab",
+        "pages/test/test",
+        "pages/test_mc/test_mc",
         "pages/form/form",
         "example/index",
         "example/button/button",
@@ -54,13 +56,13 @@
             },
             {
                 "pagePath": "pages/logs/logs",
-                "text": "User Data",
+                "text": "User's Info",
                 "iconPath": "/img_temp/cityu.png",
                 "selectedIconPath": "/img_temp/cityu.png"
             },
             {
-                "pagePath": "pages/tab/tab",
-                "text": "WebView",
+                "pagePath": "pages/test/test",
+                "text": "Test for Student",
                 "iconPath": "/img_temp/hku.png",
                 "selectedIconPath": "/img_temp/hku.png"
             },
