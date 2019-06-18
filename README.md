@@ -11,3 +11,5 @@ MAK Tsz Hong <br/>
 An prototype, support database connection
 # v1.0.1
 Supported basic student test layout
+# v1.0.2
+Supported fetch data from db to front-end in json format
