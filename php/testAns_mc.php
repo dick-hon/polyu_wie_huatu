@@ -1,8 +1,5 @@
 <?php
-$con = mysqli_connect("tszho.me:3333","polyu","Welcome1","polyu_huatu"); 
-if (!$con) {
-  die('Could not connect: ' . mysqli_connect_error());
-}
+include("config.php");
 mysqli_query($con,"set names utf8");
 // $q_id = GET[]; //question # ? 
 
@@ -45,7 +42,6 @@ while ($row2 = mysqli_fetch_array($result_content)) {
         unset($row2[$i]); //删除冗余数据 
     }
     // We add '[' in the first json element, ',' in the rest of json element.
-    ]
     if($counter == 0){
         $result_json = "[".$row2['question_content'];
     }
