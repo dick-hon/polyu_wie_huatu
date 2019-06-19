@@ -1,14 +1,14 @@
 <?php
-//fetch answer data from db
+//fetch question_title from db
 include("config.php");
 mysqli_query($con,"set names utf8");
 // $q_id = GET[]; //question # ? 
 
-$sql_title = "SELECT q_id, cat_id, level_id, question_title, last_updated FROM question";
-$sql_content = "SELECT question_content FROM question WHERE q_id = '1'";
+$sql_title = "SELECT q_id, cat_id, level_id, article_id, question_title, question_answer, last_updated FROM question WHERE q_id = '1'";
+$sql_content = "SELECT question_content FROM question";
 
-//$result_title = mysqli_query($con, $sql_title); 
-$result_content = mysqli_query($con, $sql_content);
+$result_title = mysqli_query($con, $sql_title); 
+//$result_content = mysqli_query($con, $sql_content);
 
 //for further primary development
 //$count = "SELECT COUNT(*) FROM test_mc WHERE cat_id='1'";
@@ -17,7 +17,7 @@ $result_content = mysqli_query($con, $sql_content);
 //tutorial
 //https://www.jb51.net/article/140477.htm
 
-/*
+
 //title
 $arr = array();
 while ($row = mysqli_fetch_array($result_title)) {
@@ -31,8 +31,7 @@ echo json_encode($arr, JSON_UNESCAPED_UNICODE);
 
 //echo "<br/><br/><br/>";
 
-*/
-
+/*
 //content
 $arr2 = array();
 $counter = 0;
@@ -53,6 +52,7 @@ while ($row2 = mysqli_fetch_array($result_content)) {
     $output .= $result_json;
 }
 echo $output."]";
+*/
 
 mysqli_close($con);
 ?>
