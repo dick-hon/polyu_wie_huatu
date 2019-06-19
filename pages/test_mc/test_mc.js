@@ -5,12 +5,15 @@ const app = getApp()
 Page({
     data: {
         swiperCurrent: 0, //当前banner所在位置
-        bannerList: [],
-        shopSubList: [],
+        //bannerList: [],
+        //shopSubList: [],
         goodsRecommend: [], // 推荐商品 --> ans 1,2,3,4
+        testAns: [],
+        testTitle: []
     },
     onShow() {
         const _this = this
+        /*
         WXAPI.banners().then(function (res) {
             if (res.code === 0) {
                 _this.setData({
@@ -25,15 +28,56 @@ Page({
                 })
             }
         })
+        */
+        
         WXAPI.goods({
             recommendStatus: 1
         }).then(res => {
             if (res.code === 0) {
                 _this.setData({
                     goodsRecommend: res.data //TODO: to fetch data from db
+
                 })
             }
             console.log(res.data);
+        })
+        
+        //fatch title data from db
+        var fatch_title = this
+        wx.request({
+            // add get variable into url ?= q_id
+            url: 'http://localhost/huatu/testTitle_mc.php',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (res) {
+                console.log(res.data);
+                fatch_title.setData({
+                    testTitle: res.data
+                })
+            },
+            fail: function (res) {
+                console.log("testTitle failed");
+            }
+        })
+
+        //fatch option data from db
+        var fatch_option = this
+        wx.request({
+            // add get variable into url ?= q_id
+            url: 'http://localhost/huatu/testAns_mc.php',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (res) {
+                console.log(res.data);
+                fatch_option.setData({
+                    testAns: res.data
+                })
+            },
+            fail: function (res) {
+                console.log("testAns failed");
+            }
         })
     },
     swiperchange: function (e) { // banner滚动事件
@@ -239,6 +283,7 @@ Page({
             }
         })
     },
+    /*
     goMap(e) { // 打开地图
         const id = e.currentTarget.dataset.id
         const item = this.data.shopSubList.find(ele => {
@@ -251,6 +296,7 @@ Page({
             address: item.address
         })
     },
+    */
     callPhone(e) {
         const tel = e.currentTarget.dataset.tel
         wx.makePhoneCall({

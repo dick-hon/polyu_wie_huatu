@@ -1,4 +1,4 @@
-<!-- test_mc.wxml -->
+<!-- test_mc.wxml 
 <view class="page">
     <view class="page__bd">
         <view class='recommend-title'>店家推荐</view>
@@ -8,11 +8,53 @@
                     <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true" />
                 </view>
                 <view class="goods-title">{{item.name}}</view>
-                <view class="goods-price">¥ {{item.minPrice}}</view>
-                <!-- to insert answer button here -->
-                
+                <view class="goods-price">¥ {{item.minPrice}}</view>       
             </view>
         </view>
     </view>
     <view class='page__ft'></view>
+</view>
+-->
+<!-- >
+<view class="page">
+    <view class="page__bd">
+        <view class="goods-container">
+            <!-- TODO: title 
+            <view class='recommend-title'>{{testAns.question_title}}</view>
+            <view class="goods-box" wx:for-items="{{testAns}}" bindtap="toDetailsTap">
+                <view class="img-box">
+                    <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
+                </view>     
+                <view class="good-title">{{item.answer_title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='page__ft'></view>
+</view>-->
+
+<!-- >
+<view wx:for="{{testAns}}" wx:key="id">
+    <view>{{index+1}}, {{item.answer_title}}</view>
+    <view>{{item.answer_title}}</view>
+    <view><image src="{{item.url}}"/></view>
+</view>
+-->
+
+<view class="page">
+    <view class="page_bd">
+        <view class="goods-container">
+            <!-- Question Title -->
+            <view wx:for="{{testTitle}}">
+                <view class="recommend-title">{{item.question_title}}</view>
+            </view>
+            <!-- Answer Box -->
+            <view class="goods-box" wx:for="{{testAns}}" bindtap="toDetailsTap">
+                <view class="img-box">
+                    <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true"/>
+                </view>
+                <view class="good-title">{{item.answer_title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="page_ft"></view>
 </view>
