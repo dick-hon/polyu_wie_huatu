@@ -19,3 +19,5 @@ Enhanced v1.0.2 with two sql tunnel
 Project demo by 21 June 2019
 # v1.0.5
 Embbed callback function with dynamic data output
+# v1.0.6
+Enhanced test_menu environment, connect PHP with https://huatu.project.tszho.me/api/

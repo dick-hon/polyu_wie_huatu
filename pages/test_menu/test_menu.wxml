@@ -1,4 +1,4 @@
-<import src="../../library/bread_travel/components/trip/trip.wxml"/>
+<!-- <import src="../../library/bread_travel/components/trip/trip.wxml"/>
 
 <scroll-view class="list" style="height: {{ windowHeight }}px; width: {{ windowWidth }}px;" scroll-y="true"  bindscrolltolower="loadMore" lower-threshold="800">
   <block wx:for="{{trips}}" wx:for-item="trip" wx:key="trip.data[0].id">
@@ -7,4 +7,27 @@
   <view class="loading">
     正在加载...
   </view>
+</scroll-view>
+-->
+<import src="../../library/bread_travel/components/trip/trip.wxml" />
+
+<scroll-view class="list" style="height: {{ windowHeight }}px; width: {{ windowWidth }}px;" scroll-y="true" bindscrolltolower="loadMore" lower-threshold="800">
+    <view wx:for="{{menu}}" data-id="{{item.level_id}}" bindtap="clickLevel">
+        <view class="m-trip">
+            <image class="cover" src="{{ item.level_image }}" mode="aspectFill"></image>
+            <view class="info">
+                <text class="h2">{{item.level_name}}</text>
+                <view class="detail">
+                    <view>
+                        <text>難度: {{item.level_description}}</text>
+                    </view>
+                </view>
+                <view class="user">
+                    <image class="avatar" src="{{item.level_speaker}}"></image>
+                    <view class="name">{{item.level_slogan}}</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
 </scroll-view>

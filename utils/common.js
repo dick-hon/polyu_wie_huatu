@@ -2,7 +2,7 @@
 
  function requestTestOption(callback) {
      wx.request({
-         url: 'http://localhost/huatu/testAns_mc.php',
+         url: 'https://huatu.project.tszho.me/api/test/multiple_choice/testOption_mc.php',
          headers: {
              'Content-Type': 'application/json'
          },
@@ -22,7 +22,7 @@
 
 function requestTestDetail(callback) {
      wx.request({
-         url: 'http://localhost/huatu/testAns_ans.php',
+         url: 'https://huatu.project.tszho.me/api/test/multiple_choice/testDetail_mc.php',
          headers: {
              'Content-Type': 'application/json'
          },
