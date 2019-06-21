@@ -1,0 +1,33 @@
+<!-- Page bar -->
+<view class="progress-item">
+    <i-progress percent="{{ percent }}" status="{{ status }}"></i-progress>
+</view>
+<i-page current="{{ current }}" total="10" bind:change="handleChange">
+    <view slot="prev">
+        <i-icon type="return"></i-icon>
+        上一題
+    </view>
+    <view slot="next">
+        下一題
+        <i-icon type="enter"></i-icon>
+    </view>
+</i-page>
+<view class="page">
+    <view class="page_bd">
+        <view class="goods-container">
+            <!-- Question Title -->
+            <view wx:for="{{testDetail}}">
+                <view class="recommend-title">{{item.question_title}}</view>
+            </view>
+            <!-- Answer Box -->
+            <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
+                <view class="img-box">
+                    <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
+                </view>
+                <view class="good-title">{{item.answer_title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="page_ft"></view>
+</view>
+<i-page current="{{ current }}" total="5" mode="pointer" bind:change="handleChange"></i-page>

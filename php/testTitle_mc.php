@@ -20,12 +20,15 @@ $result_title = mysqli_query($con, $sql_title);
 
 //title
 $arr = array();
+$counter = 1; // get value from .js
 while ($row = mysqli_fetch_array($result_title)) {
     $count = count($row); //不能在循环语句中，由于每次删除 row数组长度都减小 
     for ($i = 0; $i < $count; $i++) {
         unset($row[$i]); //删除冗余数据 
     }
+    $row['question_title'] = $counter.'.'.$row['question_title'];
     array_push($arr, $row);
+    $counter++;
 }
 echo json_encode($arr, JSON_UNESCAPED_UNICODE);
 

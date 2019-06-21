@@ -3,8 +3,8 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/tab/tab",
-        "pages/test/test",
-        "pages/test_mc/test_mc",
+        "pages/test_menu/test_menu",
+        "pages/test/multiple_choice/multiple_choice",
         "pages/form/form",
         "example/index",
         "example/button/button",
@@ -37,7 +37,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#57f",
-        "navigationBarTitleText": "Dick's APP",
+        "navigationBarTitleText": "微信小程序 DEMO",
         "navigationBarTextStyle": "black"
     },
     "networkTimeout": {
@@ -46,40 +46,27 @@
         "uploadFile": 10000,
         "downloadFile": 10000
     },
-    "tabBar": {
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "Index",
-                "iconPath": "/img_temp/polyu.png",
-                "selectedIconPath": "/img_temp/polyu.png"
-            },
-            {
-                "pagePath": "pages/logs/logs",
-                "text": "User's Info",
-                "iconPath": "/img_temp/cityu.png",
-                "selectedIconPath": "/img_temp/cityu.png"
-            },
-            {
-                "pagePath": "pages/test/test",
-                "text": "Test for Student",
-                "iconPath": "/img_temp/hku.png",
-                "selectedIconPath": "/img_temp/hku.png"
-            },
-            {
-                "pagePath": "pages/form/form",
-                "text": "Form",
-                "iconPath": "/img_temp/hku.png",
-                "selectedIconPath": "/img_temp/hku.png"
-            },
-            {
-                "pagePath": "example/index",
-                "text": "Weui",
-                "iconPath": "/img_temp/hku.png",
-                "selectedIconPath": "/img_temp/hku.png"
-            }
-        ],
-        "selectedColor": "#f55b70"
+        "tabBar": {
+            "list": [
+                {
+                    "pagePath": "pages/index/index",
+                    "text": "首頁",
+                    "iconPath": "/img_temp/index.png",
+                    "selectedIconPath": "/img_temp/index.png"
+                },
+                {
+                    "pagePath": "pages/test_menu/test_menu",
+                    "text": "測驗",
+                    "iconPath": "/img_temp/test.png",
+                    "selectedIconPath": "/img_temp/test.png"
+                }
+            ],
+            "selectedColor": "#f55b70"
+        },
+    "usingComponents": {
+        "i-tab-bar": "iview/tab-bar/index",
+        "i-tab-bar-item": "iview/tab-bar-item/index",
+        "i-panel": "iview/panel/index"
     },
     "debug": true,
     "sitemapLocation": "sitemap.json"

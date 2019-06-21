@@ -7,31 +7,6 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view>
-    <text>{{msg}}</text>
-  </view>
-  <!-- array1 -->
-  <view wx:for="{{array}}">{{item}}</view>
-  <!-- array2 -->
-    <view wx:for="{{array2}}">{{item}}</view>
-
-<!-- template -->
-<template name="staffName">
-  <view>
-    FirstName: {{firstName}}, LastName: {{lastName}}, num: {{num}}
-  </view>
-</template>
-    <!-- use ... to get all variables of name="staffName" -->
-    <template is="staffName" data="{{...staffA}}"></template>
-    <template is="staffName" data="{{...staffB}}"></template>
-    <template is="staffName" data="{{...staffC}}"></template>
-<!-- end template -->
-
-<!-- click button -->
-<view><text>words after click</text></view>
-<view>{{clickMsg}}</view>
-<button bindtap="clickMe">Click</button>
+  <view>华图教育 - 微信小程序 DEMO  </view>
+  <image src="../../img_temp/temp.jpg" />
 </view>

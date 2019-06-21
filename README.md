@@ -15,3 +15,7 @@ Supported basic student test layout
 Supported fetch data from db to front-end in json format
 # v1.0.3
 Enhanced v1.0.2 with two sql tunnel
+# v1.0.4
+Project demo by 21 June 2019
+# v1.0.5
+Embbed callback function with dynamic data output

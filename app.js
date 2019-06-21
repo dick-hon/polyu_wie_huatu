@@ -1,3 +1,6 @@
+// common.js defines all api connection
+var common_js = require('utils/common.js')
+
 App({
     onLaunch: function () {
         console.log('App Launch')
@@ -46,5 +49,10 @@ App({
     },
     globalData: {
         userInfo: null
+    },
+    //define all api connection
+    func: {
+        requestTestOption: common_js.requestTestOption,
+        requestTestDetail: common_js.requestTestDetail,
     }
 });

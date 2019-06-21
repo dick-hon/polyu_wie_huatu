@@ -1,3 +1,4 @@
+<!-- >
 <template name="m-trip">
   <view class="m-trip" bindtap="viewTrip" data-id="{{ trip.id }}" data-name="{{ trip.name }}" wx:if="{{ mode === 1 || mode === 2 }}">              
     <image class="cover" src="{{ trip.cover_image_w640 }}" mode="aspectFill"></image>
@@ -22,5 +23,22 @@
       <view class="detail"><view><text>{{ trip.date_added }}</text></view><view><text>{{ trip.day_count }}天</text></view></view>
     </view>
     <view class="stat"><view><text>{{ trip.waypoints }}</text>足迹</view><view><text>{{ trip.recommendations }}</text>收藏</view></view>
+  </view>
+</template>
+-->
+<template name="m-trip">
+  <view class="m-trip" bindtap="viewTrip">              
+    <image class="cover" src="{{ trip.cover_image_w640 }}" mode="aspectFill"></image>
+    <view class="info">
+      <text class="h2">小學一年級</text>
+      <view class="detail">
+        <view><text>難度: 入門</text></view>
+        <view class="place">多項選擇題</view>
+      </view>
+      <view class="user">
+        <image class="avatar" src="{{ trip.user.avatar_l }}"></image>
+        <view class="name">相信自己的目标，努力，努力，在努力！</view>
+      </view>
+    </view>
   </view>
 </template>

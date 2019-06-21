@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "Test - MC with Photo",
+  "usingComponents": {
+      "i-button": "../../../iview/button/index",
+      "i-panel": "../../../iview/panel/index",
+      "i-page": "../../../iview/page/index",
+      "i-icon": "../../../iview/icon/index",
+      "i-progress": "../../../iview/progress/index",
+      "i-toast": "../../../iview/toast/index"
+  }
+}
