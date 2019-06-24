@@ -21,3 +21,5 @@ Project demo by 21 June 2019
 Embbed callback function with dynamic data output
 # v1.0.6
 Enhanced test_menu environment, connect PHP with https://huatu.project.tszho.me/api/
+# v1.0.7
+Supported "prev" and "next" question prototype in test_mc 

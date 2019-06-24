@@ -3,12 +3,13 @@ const app = getApp()
 Page({
     data: {
         testDetail: {}, //title, ans
-        testOption: {},
+        testOption: {}, //mc
         current: 1,
         percent: 10,
-        status: 'normal'
+        status: 'normal',
+        question_number: 1
     },
-    handleChange({detail}) {
+    handleChange({detail}) { //suppose don't have next question, but now for testing only
         const type = detail.type;
         if (type === 'next') {
             this.setData({
@@ -20,6 +21,31 @@ Page({
                     status: 'success'
                 });
             }
+            this.setData({
+                question_number: this.data.question_number + 1
+            })
+            console.log(this.data.question_number);
+            
+            // fetch data from db
+            var temp = this.data.question_number;
+            
+            var that = this;
+            app.func.requestTestOption(function (testOption) {
+                console.log(testOption);
+                that.setData({
+                    testOption: testOption
+                });
+            }, temp)
+
+            var that2 = this;
+            app.func.requestTestDetail(function (testDetail) {
+                console.log(testDetail);
+                that.setData({
+                    testDetail: testDetail
+                });
+            }, temp)
+
+
         } else if (type === 'prev') {
             this.setData({
                 current: this.data.current - 1,
@@ -27,29 +53,51 @@ Page({
                 status: 'normal'
             });
             if (this.data.percent === 0) return;
+            this.setData({
+                question_number: this.data.question_number -1
+            })
+            console.log(this.data.question_number);
+            //fetch data from db
+            var temp = this.data.question_number;
+
+            var that = this;
+            app.func.requestTestOption(function (testOption) {
+                console.log(testOption);
+                that.setData({
+                    testOption: testOption
+                });
+            }, temp)
+
+            var that2 = this;
+            app.func.requestTestDetail(function (testDetail) {
+                console.log(testDetail);
+                that.setData({
+                    testDetail: testDetail
+                });
+            }, temp)
         }
         if (this.data.percent === 100) return;
         
     },
     onShow() {
+        console.log(this.data.question_number);
+        var temp = this.data.question_number;
+
         var that = this;
         app.func.requestTestOption(function (testOption) {
             console.log(testOption);
-            //console.log(ans[0].answer_id);
             that.setData({
                 testOption: testOption
             });
-        })
+        }, temp)
 
         var that2 = this;
         app.func.requestTestDetail(function (testDetail) {
-            console.log(testDetail); //ok
+            console.log(testDetail); 
             that.setData({
                 testDetail: testDetail
             });
-            //console.log("after setData");
-            //console.log(testDetail); //ok
-        })
+        }, temp)
     },
     checkAnswer: function(e) { //to create a button for answering the questions 
         console.log(e.currentTarget.dataset.id);
