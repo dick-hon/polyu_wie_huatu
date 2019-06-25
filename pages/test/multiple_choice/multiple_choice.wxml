@@ -2,7 +2,8 @@
 <view class="progress-item">
     <i-progress percent="{{ percent }}" status="{{ status }}"></i-progress>
 </view>
-<i-page current="{{ current }}" total="10" bind:change="handleChange">
+<!-- >
+<i-page current="{{ question_number }}" total="10" bind:change="handleChange">
     <view slot="prev">
         <i-icon type="return"></i-icon>
         上一題
@@ -12,22 +13,36 @@
         <i-icon type="enter"></i-icon>
     </view>
 </i-page>
+-->
 <view class="page">
     <view class="page_bd">
-        <view class="goods-container">
-            <!-- Question Title -->
-            <view wx:for="{{testDetail}}">
-                <view class="recommend-title">{{item.question_title}}</view>
-            </view>
-            <!-- Answer Box -->
-            <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
-                <view class="img-box">
-                    <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
+        <block wx:if="{{question_number <= 10}}">
+            <view class="goods-container">
+                <!-- Question Title -->
+                <view wx:for="{{testDetail}}">
+                    <view class="recommend-title">{{question_number}}.{{item.question_title}}</view>
                 </view>
-                <view class="good-title">{{item.answer_title}}</view>
+                <!-- Answer Box -->
+                <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
+                    <view class="img-box">
+                        <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
+                    </view>
+                    <view class="good-title">{{item.answer_title}}</view>
+                </view>
             </view>
-        </view>
+            <i-page current="{{ question_number }}" total="5" mode="pointer" bind:change="handleChange"></i-page>
+        </block>
+        <block wx:else>
+            <view>Hello World</view>
+            <view wx:for="{{testResult}}">
+            <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+                <van-collapse-item title="{{item.r_id}}" name="{{index}}">
+                    <view> answer: {{item.answer}} </view>
+                    <view> correct: {{item.correct}} </view>
+                </van-collapse-item>
+            </van-collapse>
+            </view>
+        </block>
     </view>
     <view class="page_ft"></view>
 </view>
-<i-page current="{{ current }}" total="5" mode="pointer" bind:change="handleChange"></i-page>

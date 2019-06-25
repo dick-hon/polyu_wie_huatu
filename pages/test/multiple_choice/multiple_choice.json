@@ -1,11 +1,13 @@
 {
-  "navigationBarTitleText": "Test - MC with Photo",
-  "usingComponents": {
-      "i-button": "../../../iview/button/index",
-      "i-panel": "../../../iview/panel/index",
-      "i-page": "../../../iview/page/index",
-      "i-icon": "../../../iview/icon/index",
-      "i-progress": "../../../iview/progress/index",
-      "i-toast": "../../../iview/toast/index"
-  }
+    "navigationBarTitleText": "Test - MC with Photo",
+    "usingComponents": {
+        "i-button": "../../../library/iview/button/index",
+        "i-panel": "../../../library/iview/panel/index",
+        "i-page": "../../../library/iview/page/index",
+        "i-icon": "../../../library/iview/icon/index",
+        "i-progress": "../../../library/iview/progress/index",
+        "i-toast": "../../../library/iview/toast/index",
+        "van-collapse": "../../../library/vant/collapse/index",
+        "van-collapse-item": "../../../library/vant/collapse-item/index"
+    }
 }

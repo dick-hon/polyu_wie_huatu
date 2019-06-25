@@ -54,6 +54,7 @@ App({
     func: {
         requestTestOption: common_js.requestTestOption,
         requestTestDetail: common_js.requestTestDetail,
-        requestTestResult: common_js.requestTestResult
+        requestTestResult: common_js.requestTestResult,
+        submitTestResult: common_js.submitTestResult
     }
 });

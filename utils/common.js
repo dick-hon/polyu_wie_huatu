@@ -43,9 +43,29 @@
      })
  }
 
- function requestTestResult(resultData) {
+function requestTestResult(callback) {
+    wx.request({
+        url: "https://huatu.project.tszho.me/api/test/test_result/requestTestResult.php",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: res => {
+            if (res.data) {
+                //console.log('common.js : get loged2')
+                return typeof callback == "function" && callback(res.data)
+            } else {
+                return typeof callback == "function" && callback(false)
+            }
+        },
+        fail: function (res) {
+            console.log("testAns failed");
+        }
+    })
+}
+
+ function submitTestResult(resultData) {
      wx.request({
-         url: "https://huatu.project.tszho.me/api/test/test_result/testResult_mc.php",
+         url: "https://huatu.project.tszho.me/api/test/test_result/submitTestResult_mc.php",
          header: {
              "Content-Type": "application/x-www-form-urlencoded"
          },
@@ -62,5 +82,6 @@
  module.exports = {
      requestTestOption: requestTestOption,
      requestTestDetail: requestTestDetail,
-     requestTestResult: requestTestResult
+     requestTestResult: requestTestResult,
+     submitTestResult: submitTestResult
  }
