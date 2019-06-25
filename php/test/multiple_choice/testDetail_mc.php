@@ -1,19 +1,19 @@
 <?php
 //fetch answer data from db
-include("config.php");
+include("../../config.php");
 mysqli_query($con,"set names utf8");
-// $q_id = GET[]; //question # ? 
+$q_id = $_GET["q_id"]; //question # ? 
 
 //$question_answer_id = $_GET["q_id"];
 //$student_answer = $_GET["s_ans"];
 //$question_answer_id = 1;
 //echo $student_answer;
 
-$sql_title = "SELECT q_id, cat_id, level_id, question_title, last_updated FROM question";
-$sql_content = "SELECT question_content FROM question WHERE q_id = '1'";
+//$sql_title = "SELECT q_id, cat_id, level_id, question_title, last_updated FROM question";
+//$sql_content = "SELECT question_content FROM question WHERE q_id = '1'";
 //$sql_answer = "SELECT question_answer FROM question WHERE q_id = '$question_answer_id'";
 
-$sql_answer = "SELECT question_title, question_answer FROM question WHERE q_id = '1'";
+$sql_answer = "SELECT question_title, question_answer FROM question WHERE q_id = '$q_id'";
 
 
 $result_answer = mysqli_query($con, $sql_answer);

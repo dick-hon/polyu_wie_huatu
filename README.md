@@ -23,3 +23,5 @@ Embbed callback function with dynamic data output
 Enhanced test_menu environment, connect PHP with https://huatu.project.tszho.me/api/
 # v1.0.7
 Supported "prev" and "next" question prototype in test_mc 
+# v1.0.8
+Supported check Answer with insert data into db 

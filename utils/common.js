@@ -1,7 +1,8 @@
  // common.js define all request function
+ // can use post method 
 
  function requestTestOption(callback, temp) {
-    var api_url = "https://huatu.project.tszho.me/api/test/multiple_choice/testOption_mc.php?q_id=" + temp;
+     var api_url = "https://huatu.project.tszho.me/api/test/multiple_choice/testOption_mc.php?q_id=" + temp;
      wx.request({
          url: api_url,
          headers: {
@@ -21,8 +22,8 @@
      })
  }
 
-function requestTestDetail(callback, temp) {
-    var api_url = "https://huatu.project.tszho.me/api/test/multiple_choice/testDetail_mc.php?q_id=" + temp;
+ function requestTestDetail(callback, temp) {
+     var api_url = "https://huatu.project.tszho.me/api/test/multiple_choice/testDetail_mc.php?q_id=" + temp;
      wx.request({
          url: api_url,
          headers: {
@@ -42,8 +43,24 @@ function requestTestDetail(callback, temp) {
      })
  }
 
+ function requestTestResult(resultData) {
+     wx.request({
+         url: "https://huatu.project.tszho.me/api/test/test_result/testResult_mc.php",
+         header: {
+             "Content-Type": "application/x-www-form-urlencoded"
+         },
+         method: "POST",
+         data: {
+             //TODO: user_id;
+             q_id: resultData[0],
+             user_answer: resultData[1],
+             isCorrect: resultData[2] 
+         }
+     })
+ }
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
      requestTestDetail: requestTestDetail,
+     requestTestResult: requestTestResult
  }

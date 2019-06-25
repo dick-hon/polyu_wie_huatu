@@ -31,7 +31,6 @@ Page({
             }, 2000)
 
         } else if (e.detail.value.xingbie.length == 0) {
-
             wx.showToast({
 
                 title: '性别不能为空!',
@@ -41,13 +40,11 @@ Page({
                 duration: 1500
 
             })
-
             setTimeout(function () {
 
                 wx.hideToast()
 
             }, 2000)
-
         } else if (e.detail.value.aihao.length == 0) {
 
             wx.showToast({
@@ -67,23 +64,18 @@ Page({
             }, 2000)
 
         } else {
-
-
             wx.request({
-                
                 //url: 'https://www.xxxxx.com/wx/form.php',
-
                 url: 'http://localhost/huatu/form.php',
-
                 header: {
-
                     "Content-Type": "application/x-www-form-urlencoded"
-
                 },
-
                 method: "POST",
-
-                data: { xingming: e.detail.value.xingming, xingbie: e.detail.value.xingbie, aihao: e.detail.value.aihao },
+                data: {
+                xingming: e.detail.value.xingming, 
+                xingbie: e.detail.value.xingbie, 
+                aihao: e.detail.value.aihao 
+                },
 
                 success: function (res) {
                     console.log(res.data);
