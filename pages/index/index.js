@@ -7,12 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    array: [1,2,3,4,5], 
-    array2: [10,9,8,7,6],
-      staffA: { firstName: 'Hulk', lastName: 'Hu', num: '123' },
-      staffB: { firstName: 'Shang', lastName: 'You' },
-      staffC: { firstName: 'Gideon', lastName: 'Lin' }
+    userData: {},
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
   bindViewTap: function() {
@@ -48,6 +44,15 @@ Page({
         }
       })
     }
+    var u = this;
+    app.func.requestUserData(function (u_info) {
+      console.log("HEREREE");
+      u.setData({
+        userData: u_info
+      })
+    }, '1')
+
+    console.log(this.data.userData);
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -61,5 +66,8 @@ Page({
       this.setData({
           clickMsg: "The button has been click"
       })
+  },
+  ifUserInDB: function(){
+    console.log(this.data.userData);
   }
 })

@@ -8,5 +8,5 @@
     </block>
   </view>
   <view>华图教育 - 微信小程序 DEMO  </view>
-  <image src="../../img_temp/temp.jpg" />
+  <button bindtap='ifUserInDB'>asd</button>
 </view>

@@ -58,9 +58,32 @@
          }
      })
  }
+
+  function requestUserData(callback, user_id){
+    var api_url = 'https://huatu.project.tszho.me/api/user/getUserInfo.php?user_id='+ user_id;
+    wx.request({
+      url: api_url,
+      header:{
+        'Content-Type': 'application/json'
+      },
+      success: res => {
+        if (res.data) {
+          return typeof callback == "function" && callback(res.data, user_id)
+        } else {
+          return typeof callback == "function" && callback(false, user_id)
+        }
+      },
+      fail: function (res) {
+        console.log("common.js getUser data failed");
+      }
+    })
+  }
+
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
      requestTestDetail: requestTestDetail,
-     requestTestResult: requestTestResult
+     requestTestResult: requestTestResult,
+     // get user info
+      requestUserData: requestUserData
  }

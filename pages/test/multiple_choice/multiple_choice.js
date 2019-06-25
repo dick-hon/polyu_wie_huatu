@@ -31,6 +31,7 @@ Page({
             var temp = this.data.question_number;
 
             var that = this;
+            
             app.func.requestTestOption(function(testOption) {
                 console.log(testOption);
                 that.setData({
