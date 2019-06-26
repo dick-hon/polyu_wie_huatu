@@ -34,3 +34,6 @@ Powered by PolyU WIE 2019 - Group H
 ### v1.0.12
 > Enhanced Test result prototype with db connection
 > Option haven't finish 
+# v1.1 (Beta Version)
+### v1.1
+> An prototype, support basic multiple choice test

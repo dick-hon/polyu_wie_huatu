@@ -36,8 +36,16 @@
             <i-divider content="我的成績表" color="#2d8cf0" lineColor="#2d8cf0"></i-divider>
             <view wx:for="{{testResult}}">
                 <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-                    <van-collapse-item title="{{index + 1}}.{{item.question_title}}" name="{{index}}">
-                        <view>article_id: {{item.article_id}}</view>
+                    <van-collapse-item name="{{index}}">
+                        <block wx:if="{{item.correct == 1}}">
+                            <view slot="title">
+                                <image src="../../../img_temp/result/like_16px.png" class="greenImage" /> {{index + 1}}.{{item.question_title}}</view>
+                        </block>
+                        <block wx:else>
+                            <view slot="title" class="red">
+                                <image src="../../../img_temp/result/wrong_16px.png" class="redImage" /> {{index + 1}}.{{item.question_title}}</view>
+                        </block>
+                        <view style="color:#2d8cf0;">article_id: {{item.article_id}}</view>
                         <view> answer: {{item.answer}} </view>
                         <block wx:if="{{item.correct == 1}}">
                             <view> correct: Yes </view>

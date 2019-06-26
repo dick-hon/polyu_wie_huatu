@@ -96,3 +96,19 @@ swiper-item image {
 .progress-item{
     padding: 12px;
 }
+
+.green {
+    color: #19be6b;
+
+}
+.red {
+    color: #ed3f14;
+}
+.redImage {
+    width: 30rpx !important;
+    height: 30rpx !important;
+}
+.greenImage {
+    width: 30rpx !important;
+    height: 30rpx !important;
+}

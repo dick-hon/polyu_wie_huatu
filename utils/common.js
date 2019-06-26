@@ -103,11 +103,37 @@
          }
      })
  }
+
+function requestTestResult_Option(callback, user_id) {
+    console.log(user_id);
+    wx.request({
+        url: "https://huatu.project.tszho.me/api/test/test_result/requestTestResult_Option.php",
+        header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "POST",
+        data: {
+            user_id: user_id
+        },
+        success: res => {
+            if (res.data) {
+                //console.log('common.js : get loged2')
+                return typeof callback == "function" && callback(res.data, user_id)
+            } else {
+                return typeof callback == "function" && callback(false, user_id)
+            }
+        },
+        fail: function (res) {
+            console.log("testAns failed");
+        }
+    })
+}
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
      requestTestDetail: requestTestDetail,
      requestTestResult: requestTestResult,
+     requestTestResult_Option: requestTestResult_Option,
      requestUserData: requestUserData,
      submitTestResult: submitTestResult
  }
