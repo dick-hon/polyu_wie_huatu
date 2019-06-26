@@ -6,7 +6,7 @@ Powered by PolyU WIE 2019 - Group H
 > CHIU Chak Pang <br/>
 > HON Chun Kin <br/>
 > MAK Tsz Hong <br/>
-# v1.0.X (Beta Version)
+## v1.0.X (Beta Version)
 ### v1.0 
 > An prototype, support database connection
 ### v1.0.1
@@ -34,6 +34,6 @@ Powered by PolyU WIE 2019 - Group H
 ### v1.0.12
 > Enhanced Test result prototype with db connection
 > Option haven't finish 
-# v1.1 (Beta Version)
+## v1.1 (Beta Version)
 ### v1.1
 > An prototype, support basic multiple choice test
