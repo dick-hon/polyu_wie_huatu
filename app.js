@@ -55,6 +55,7 @@ App({
         requestTestOption: common_js.requestTestOption,
         requestTestDetail: common_js.requestTestDetail,
         requestTestResult: common_js.requestTestResult,
-        submitTestResult: common_js.submitTestResult
+        submitTestResult: common_js.submitTestResult,
+        requestUserData: common_js.requestUserData
     }
 });
