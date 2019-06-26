@@ -8,6 +8,7 @@
         "i-progress": "../../../library/iview/progress/index",
         "i-toast": "../../../library/iview/toast/index",
         "van-collapse": "../../../library/vant/collapse/index",
-        "van-collapse-item": "../../../library/vant/collapse-item/index"
+        "van-collapse-item": "../../../library/vant/collapse-item/index",
+        "i-divider": "../../../library/iview/divider/index"
     }
 }

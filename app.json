@@ -2,9 +2,9 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/tab/tab",
         "pages/test_menu/test_menu",
         "pages/test/multiple_choice/multiple_choice",
+        "pages/personal_Info/personal_Info",
         "pages/form/form"
     ],
     "window": {
@@ -24,14 +24,20 @@
                 {
                     "pagePath": "pages/index/index",
                     "text": "首頁",
-                    "iconPath": "/img_temp/index.png",
-                    "selectedIconPath": "/img_temp/index.png"
+                    "iconPath": "/img_temp/tabbar/index.png",
+                    "selectedIconPath": "/img_temp/tabbar/index.png"
                 },
                 {
                     "pagePath": "pages/test_menu/test_menu",
                     "text": "測驗",
-                    "iconPath": "/img_temp/test.png",
-                    "selectedIconPath": "/img_temp/test.png"
+                    "iconPath": "/img_temp/tabbar/test.png",
+                    "selectedIconPath": "/img_temp/tabbar/test.png"
+                },
+                {
+                    "pagePath": "pages/personal_Info/personal_Info",
+                    "text": "個人資料",
+                    "iconPath": "/img_temp/tabbar/personal_Info.png",
+                    "selectedIconPath": "/img_temp/tabbar/personal_Info.png"
                 }
             ],
             "selectedColor": "#f55b70"

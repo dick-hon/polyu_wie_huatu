@@ -33,10 +33,10 @@
             <i-page current="{{ question_number }}" total="5" mode="pointer" bind:change="handleChange"></i-page>
         </block>
         <block wx:else>
-            <view>Hello World</view>
+            <i-divider content="我的成績表" color="#2d8cf0" lineColor="#2d8cf0"></i-divider>
             <view wx:for="{{testResult}}">
             <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-                <van-collapse-item title="{{item.r_id}}" name="{{index}}">
+                <van-collapse-item title="{{index + 1}}.{{item.r_id}}" name="{{index}}">
                     <view> answer: {{item.answer}} </view>
                     <view> correct: {{item.correct}} </view>
                 </van-collapse-item>
