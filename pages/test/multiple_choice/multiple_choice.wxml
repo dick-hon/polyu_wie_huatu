@@ -35,12 +35,18 @@
         <block wx:else>
             <i-divider content="我的成績表" color="#2d8cf0" lineColor="#2d8cf0"></i-divider>
             <view wx:for="{{testResult}}">
-            <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-                <van-collapse-item title="{{index + 1}}.{{item.r_id}}" name="{{index}}">
-                    <view> answer: {{item.answer}} </view>
-                    <view> correct: {{item.correct}} </view>
-                </van-collapse-item>
-            </van-collapse>
+                <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+                    <van-collapse-item title="{{index + 1}}.{{item.question_title}}" name="{{index}}">
+                        <view>article_id: {{item.article_id}}</view>
+                        <view> answer: {{item.answer}} </view>
+                        <block wx:if="{{item.correct == 1}}">
+                            <view> correct: Yes </view>
+                        </block>
+                        <block wx:else>
+                            <view> Correct: No </view>
+                        </block>
+                    </van-collapse-item>
+                </van-collapse>
             </view>
         </block>
     </view>

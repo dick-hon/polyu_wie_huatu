@@ -180,13 +180,15 @@ Page({
                     }, 1500)
                 },
             })
+
+                var user_id = 1; // for testing only
                 var that3 = this;
                 app.func.requestTestResult(function (testResult) {
                     console.log(testResult);
                     that3.setData({
                         testResult: testResult
                     });
-                })
+                }, user_id)
 
 
         }

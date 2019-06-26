@@ -43,25 +43,30 @@
      })
  }
 
-function requestTestResult(callback) {
-    wx.request({
-        url: "https://huatu.project.tszho.me/api/test/test_result/requestTestResult.php",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        success: res => {
-            if (res.data) {
-                //console.log('common.js : get loged2')
-                return typeof callback == "function" && callback(res.data)
-            } else {
-                return typeof callback == "function" && callback(false)
-            }
-        },
-        fail: function (res) {
-            console.log("testAns failed");
-        }
-    })
-}
+ function requestTestResult(callback, user_id) {
+     console.log(user_id);
+     wx.request({
+         url: "https://huatu.project.tszho.me/api/test/test_result/requestTestResult.php",
+         header: {
+             "Content-Type": "application/x-www-form-urlencoded"
+         },
+         method: "POST",
+         data: {
+             user_id: user_id
+         },
+         success: res => {
+             if (res.data) {
+                 //console.log('common.js : get loged2')
+                 return typeof callback == "function" && callback(res.data, user_id)
+             } else {
+                 return typeof callback == "function" && callback(false, user_id)
+             }
+         },
+         fail: function(res) {
+             console.log("testAns failed");
+         }
+     })
+ }
 
  function submitTestResult(resultData) {
      wx.request({
@@ -74,35 +79,35 @@ function requestTestResult(callback) {
              //TODO: user_id;
              q_id: resultData[0],
              user_answer: resultData[1],
-             isCorrect: resultData[2] 
+             isCorrect: resultData[2]
          }
      })
  }
 
-function requestUserData(callback, user_id) {
-    var api_url = 'https://huatu.project.tszho.me/api/user/getUserInfo.php?user_id=' + user_id;
-    wx.request({
-        url: api_url,
-        header: {
-            'Content-Type': 'application/json'
-        },
-        success: res => {
-            if (res.data) {
-                return typeof callback == "function" && callback(res.data, user_id)
-            } else {
-                return typeof callback == "function" && callback(false, user_id)
-            }
-        },
-        fail: function (res) {
-            console.log("common.js getUser data failed");
-        }
-    })
-}
+ function requestUserData(callback, user_id) {
+     var api_url = 'https://huatu.project.tszho.me/api/user/getUserInfo.php?user_id=' + user_id;
+     wx.request({
+         url: api_url,
+         header: {
+             'Content-Type': 'application/json'
+         },
+         success: res => {
+             if (res.data) {
+                 return typeof callback == "function" && callback(res.data, user_id)
+             } else {
+                 return typeof callback == "function" && callback(false, user_id)
+             }
+         },
+         fail: function(res) {
+             console.log("common.js getUser data failed");
+         }
+     })
+ }
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
      requestTestDetail: requestTestDetail,
      requestTestResult: requestTestResult,
-     submitTestResult: submitTestResult,
-     requestUserData: requestUserData
+     requestUserData: requestUserData,
+     submitTestResult: submitTestResult
  }

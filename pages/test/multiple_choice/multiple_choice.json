@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "Test - MC with Photo",
+    "navigationBarTitleText": "小一測驗 - 多項選擇題",
     "usingComponents": {
         "i-button": "../../../library/iview/button/index",
         "i-panel": "../../../library/iview/panel/index",

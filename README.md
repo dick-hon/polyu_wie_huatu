@@ -31,3 +31,6 @@ Powered by PolyU WIE 2019 - Group H
 > Supported getUserData from db
 ### v1.0.11
 > Enhanced background-image and tabbar
+### v1.0.12
+> Enhanced Test result prototype with db connection
+> Option haven't finish 
