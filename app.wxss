@@ -1,11 +1,12 @@
 @import 'style/weui.wxss';
 
 page{
-    background-color: #F8F8F8;
+    /*background-color: #F8F8F8;*/
     font-size: 16px;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
     width:100%;
-    height:100%;
+    background: url('https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/wallpaper.jpg');   
+    background-repeat: repeat;
 }
 .page__hd {
     padding: 40px;

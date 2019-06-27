@@ -34,10 +34,10 @@ swiper-item image {
 }
 .recommend-title {
   text-align: center;
-  font-size: 38rpx;
+  /*font-size: 38rpx;*/
   height: 38rpx;
   line-height: 38rpx;
-  margin-top: 50rpx;
+  /* margin-top: 50rpx; */
   margin-bottom: 20rpx;
 }
 .goods-container{
@@ -97,6 +97,10 @@ swiper-item image {
     padding: 12px;
 }
 
+.progress_bar {
+    width: 105% !important;
+}
+
 .green {
     color: #19be6b;
 
@@ -111,4 +115,10 @@ swiper-item image {
 .greenImage {
     width: 30rpx !important;
     height: 30rpx !important;
+}
+
+.backgroundImage {
+    background: url('https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/wallpaper_mc.png');   
+    background-repeat:  repeat;
+    width: 100%;
 }

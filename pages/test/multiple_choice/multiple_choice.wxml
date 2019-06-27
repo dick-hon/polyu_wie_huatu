@@ -1,6 +1,11 @@
+<!-- edited css by dick
+*i-progress component for width: 106% in i-progress/index.wxss
+*van-collapse component for color in vant/cell/index.wxss
+-->
 <!-- Page bar -->
 <view class="progress-item">
-    <i-progress percent="{{ percent }}" status="{{ status }}"></i-progress>
+    <!-- edited i-progress component for width: 106% in i-progress/index.wxss -->
+    <i-progress percent="{{ percent }}" status="{{ status }}" class="progress_bar"></i-progress>
 </view>
 <!-- >
 <i-page current="{{ question_number }}" total="10" bind:change="handleChange">
@@ -14,49 +19,48 @@
     </view>
 </i-page>
 -->
-<view class="page">
-    <view class="page_bd">
-        <block wx:if="{{question_number <= 10}}">
-            <view class="goods-container">
-                <!-- Question Title -->
-                <view wx:for="{{testDetail}}">
-                    <view class="recommend-title">{{question_number}}.{{item.question_title}}</view>
-                </view>
-                <!-- Answer Box -->
-                <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
-                    <view class="img-box">
-                        <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
-                    </view>
-                    <view class="good-title">{{item.answer_title}}</view>
-                </view>
+<block wx:if="{{question_number <= 10}}">
+    <view class="goods-container">
+        <!-- Question Title -->
+        <view wx:for="{{testDetail}}">
+            <view class="recommend-title">{{question_number}}.{{item.question_title}}</view>
+        </view>
+        <!-- Answer Box -->
+        <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
+            <view class="img-box">
+                <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
             </view>
-            <i-page current="{{ question_number }}" total="5" mode="pointer" bind:change="handleChange"></i-page>
-        </block>
-        <block wx:else>
-            <i-divider content="我的成績表" color="#2d8cf0" lineColor="#2d8cf0"></i-divider>
-            <view wx:for="{{testResult}}">
-                <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-                    <van-collapse-item name="{{index}}">
-                        <block wx:if="{{item.correct == 1}}">
-                            <view slot="title">
-                                <image src="../../../img_temp/result/like_16px.png" class="greenImage" /> {{index + 1}}.{{item.question_title}}</view>
-                        </block>
-                        <block wx:else>
-                            <view slot="title" class="red">
-                                <image src="../../../img_temp/result/wrong_16px.png" class="redImage" /> {{index + 1}}.{{item.question_title}}</view>
-                        </block>
-                        <view style="color:#2d8cf0;">article_id: {{item.article_id}}</view>
-                        <view> answer: {{item.answer}} </view>
-                        <block wx:if="{{item.correct == 1}}">
-                            <view> correct: Yes </view>
-                        </block>
-                        <block wx:else>
-                            <view> Correct: No </view>
-                        </block>
-                    </van-collapse-item>
-                </van-collapse>
-            </view>
-        </block>
+            <view class="good-title">{{item.answer_title}}</view>
+        </view>
     </view>
-    <view class="page_ft"></view>
-</view>
+    <!-- >
+        <i-page current="{{ question_number }}" total="5" mode="pointer" bind:change="handleChange"></i-page>
+        -->
+</block>
+<block wx:else>
+    <i-divider content="我 的 成 績 表" lineColor="#495060"></i-divider>
+    <view wx:for="{{testResult}}">
+        <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+            <van-collapse-item name="{{index}}">
+                <block wx:if="{{item.correct == 1}}">
+                    <view slot="title">
+                        <image src="../../../img_temp/result/like_16px.png" class="greenImage" /> {{index + 1}}.{{item.question_title}}</view>
+                </block>
+                <block wx:else>
+                    <view slot="title" class="red">
+                        <image src="../../../img_temp/result/wrong_16px.png" class="redImage" /> {{index + 1}}.{{item.question_title}}</view>
+                </block>
+                <view style="color:#2d8cf0;">article_id: {{item.article_id}}</view>
+                <view> answer: {{item.answer}} </view>
+                <block wx:if="{{item.correct == 1}}">
+                    <view> correct: Yes </view>
+                </block>
+                <block wx:else>
+                    <view> Correct: No </view>
+                </block>
+            </van-collapse-item>
+           <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+        </van-collapse>
+    </view>
+</block>
+<!-- <view class="page_ft"></view> -->

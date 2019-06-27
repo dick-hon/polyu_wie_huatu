@@ -116,12 +116,12 @@ Page({
                 title: '恭喜!! 答對了!',
                 icon: '',
                 image: '../../../img_temp/correct.png',
-                duration: 1500,
+                duration: 1000,
                 mask: true,
                 success: function(res) {
                     setTimeout(function() {
                         //wx.navigateBack()
-                    }, 1500)
+                    }, 500)
                 },
             })
         } else {
@@ -130,12 +130,12 @@ Page({
                 title: '對不起, 錯了!',
                 icon: '',
                 image: '../../../img_temp/wrong.png',
-                duration: 1500,
+                duration: 1000,
                 mask: true,
                 success: function(res) {
                     setTimeout(function() {
                         //wx.navigateBack()
-                    }, 1500)
+                    }, 500)
                 },
             })
         }

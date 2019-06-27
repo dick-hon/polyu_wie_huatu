@@ -1,11 +1,3 @@
-.backgroundImage {
-    background: url('http://images.unsplash.com/photo-1517524285303-d6fc683dddf8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9');   
-    /*https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiQuA1f5TUEZWgyIkrH5opNa6sBVo1nXYcXMQUwCOn5wmO5hc*/
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
 .personal_container {
   height: 100%;
   width: 100%;

@@ -1,9 +1,9 @@
 /**index.wxss**/
 .backgroundImage {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUWquHLVu3bfCaCWoGBlKOM-KKGAww-obRsSujMG3AQMKNySe');   
-    background-size: cover;
-    width: 100%;
+    background: url('https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/wallpaper_mc.png');   
+    background-repeat: repeat;
     height: 100%;
+    width: 100%;
 }
 
 .userinfo {

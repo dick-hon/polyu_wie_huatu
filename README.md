@@ -12,6 +12,8 @@ This project aims to build a interactive learning platform for primary student i
 ## v1.1 (Beta Version)
 ### v1.1
 > An prototype, support basic multiple choice test
+### v1.1.2
+> Enhanced user interface
 
 ## v1.0.X (Beta Version)
 ### v1.0.12
