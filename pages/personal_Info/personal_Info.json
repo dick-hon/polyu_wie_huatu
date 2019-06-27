@@ -4,6 +4,7 @@
     "i-cell-group": "../../library/iview/cell-group/index",
     "i-cell": "../../library/iview/cell/index",
     "i-badge": "../../library/iview/badge/index",
-    "i-button": "../../library/iview/button/index"
+    "i-button": "../../library/iview/button/index",
+    "i-card": "../../library/iview/card/index"
   }
 }
