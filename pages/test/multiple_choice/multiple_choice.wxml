@@ -2,6 +2,7 @@
 *i-progress component for width: 106% in i-progress/index.wxss
 *van-collapse component for color in vant/cell/index.wxss
 -->
+<i-message id="message" />
 <!-- Page bar -->
 <view class="progress-item">
     <!-- edited i-progress component for width: 106% in i-progress/index.wxss -->

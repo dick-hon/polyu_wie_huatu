@@ -9,6 +9,7 @@
         "i-toast": "../../../library/iview/toast/index",
         "van-collapse": "../../../library/vant/collapse/index",
         "van-collapse-item": "../../../library/vant/collapse-item/index",
-        "i-divider": "../../../library/iview/divider/index"
+        "i-divider": "../../../library/iview/divider/index",
+        "i-message": "../../../library/iview/message/index"
     }
 }
