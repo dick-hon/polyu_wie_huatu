@@ -3,7 +3,7 @@ Powered by PolyU WIE 2019 - Group H
 ## Team List
 > CHAN Tsz Ho <br/>
 > CHENG Chongxiao <br/>
-> ~~CHIU Chak Pang~~ <br/>
+> CHIU Chak Pang <br/>
 > HON Chun Kin <br/>
 > MAK Tsz Hong <br/>
 
@@ -13,8 +13,8 @@ Powered by PolyU WIE 2019 - Group H
 
 ## v1.0.X (Beta Version)
 ### v1.0.12
-> - [ ] Enhanced Test result prototype with db connection <br/>
-> - [x] Option function 
+> - [x] Enhanced Test result prototype with db connection <br/>
+> - [] Option function 
 ### v1.0.11
 > Enhanced background-image and tabbar
 ### v1.0.10
