@@ -1,5 +1,7 @@
 # Huatu - 微信小程序 
-Powered by PolyU WIE 2019 - Group H
+*Powered by PolyU WIE 2019 - Group H*
+This project aims to build a interactive learning platform for primary student in WeChat Mini Program.
+
 ## Team List
 > CHAN Tsz Ho <br/>
 > CHENG Chongxiao <br/>
@@ -14,7 +16,7 @@ Powered by PolyU WIE 2019 - Group H
 ## v1.0.X (Beta Version)
 ### v1.0.12
 > - [x] Enhanced Test result prototype with db connection <br/>
-> - [] Option function 
+> - [ ] Option function 
 ### v1.0.11
 > Enhanced background-image and tabbar
 ### v1.0.10
@@ -26,7 +28,7 @@ Powered by PolyU WIE 2019 - Group H
 ### v1.0.7
 > Supported "prev" and "next" question prototype in test_mc 
 ### v1.0.6
-> Enhanced test_menu environment, connect PHP with https://huatu.project.tszho.me/api/
+> Enhanced test_menu environment, connect PHP with [Hong Kong Server](https://huatu.project.tszho.me/api/).
 ### v1.0.5
 > Embbed callback function with dynamic data output
 ### v1.0.4
