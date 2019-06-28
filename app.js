@@ -70,6 +70,7 @@ App({
         requestTestResult_Option: common_js.requestTestResult_Option,
         submitTestResult: common_js.submitTestResult,
         requestUserData: common_js.requestUserData,
-        requestArticle: common_js.requestArticle
+        requestArticle: common_js.requestArticle,
+        requestArticleSpecific: common_js.requestArticleSpecific
     }
 });

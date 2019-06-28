@@ -13,7 +13,6 @@ This project aims to build a interactive learning platform for primary student i
 ### v1.1.3
 > Supported article prototype
 > [x] Change path
-> [ ] fetch data from global varible
 ### v1.1.2
 > Enhanced user interface with sound effect
 ### v1.1

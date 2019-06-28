@@ -2,8 +2,7 @@ const app = getApp()
 Page({
     data: {
         article_id: '',
-        article_target: '',
-        article: {},
+        article_specific: {},
         clicked: false // to avoid change page after clicked like/ cancel
     },
     onShow(options) {
@@ -13,10 +12,10 @@ Page({
         console.log("article_id" + this.data.article_id);
         var temp = this.data.article_id;
         var that = this;
-        app.func.requestArticle(function(article) {
-            console.log(article);
+        app.func.requestArticleSpecific(function (article_specific) {
+            console.log(article_specific);
             that.setData({
-                article: article
+                article_specific: article_specific
             });
         }, temp)
     },
@@ -25,26 +24,5 @@ Page({
         this.setData({
             scrollTop: e.scrollTop
         })
-    },
-    actionLike() {
-        console.log("like!");
-        this.setData({
-            clicked: true
-        })
-    },
-    actionCancel() {
-        console.log("cancel!");
-        this.setData({
-            clicked: true
-        })
-    },
-    clickArticle: function(e) {
-        if(this.data.clicked == false) {
-            console.log(e.currentTarget.dataset.id);
-        } else {
-            this.setData({
-                clicked: false
-            })
-        }
     }
 })
