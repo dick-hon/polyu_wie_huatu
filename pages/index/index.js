@@ -46,7 +46,7 @@ Page({
         }
         var u = this;
         app.func.requestUserData(function(u_info) {
-            console.log("HERERERE");
+            // console.log("HERERERE");
             u.setData({
                 userData: u_info
             })
@@ -67,6 +67,8 @@ Page({
         })
     },
     ifUserInDB: function() {
-        console.log(this.data.userData);
+        //console.log(this.data.userData);
+        //console.log(app.globalData.audio_correct.src);
+        app.globalData.audio_correct.play();
     }
 })

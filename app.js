@@ -46,9 +46,21 @@ App({
                 }
             }
         })
+        //get audio from server to prevent loading delay.
+        this.globalData.audio_correct = wx.createInnerAudioContext()
+        this.globalData.audio_correct.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/correct.mp3'
+
+        this.globalData.audio_fighting = wx.createInnerAudioContext()
+        this.globalData.audio_fighting.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/fighting.mp3'
+
+        this.globalData.audio_result = wx.createInnerAudioContext()
+        this.globalData.audio_result.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/result.mp3'
     },
     globalData: {
-        userInfo: null
+        userInfo: null,
+        audio_correct: null,
+        audio_fighting: null,
+        audio_result: null
     },
     //define all api connection
     func: {
@@ -57,6 +69,7 @@ App({
         requestTestResult: common_js.requestTestResult,
         requestTestResult_Option: common_js.requestTestResult_Option,
         submitTestResult: common_js.submitTestResult,
-        requestUserData: common_js.requestUserData
+        requestUserData: common_js.requestUserData,
+        requestArticle: common_js.requestArticle
     }
 });

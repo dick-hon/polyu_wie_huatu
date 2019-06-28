@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "文章",
+    "usingComponents": {
+        "i-swipeout": "../../library/iview/swipeout/index",
+        "i-cell-group": "../../library/iview/cell-group/index",
+        "i-cell": "../../library/iview/cell/index",
+        "i-card": "../../library/iview/card/index",
+        "i-icon": "../../library/iview/icon/index",
+        "i-action-sheet": "../../library/iview/action-sheet/index"
+    }
+}

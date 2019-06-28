@@ -1,0 +1,24 @@
+<view class="i-swipeout-demo">
+    <view class="i-swipeout-demo-title">{{article_target}}</view>
+    <view wx:for="{{article}}" data-id="{{item.article_id}}" bindtap="clickArticle">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{120}}">
+            <view slot="content">
+                <view class="i-swipeout-image">
+                    <i-icon size="20" color="#FFFFFF" type="brush"></i-icon>
+                </view>
+                <view class="i-swipeout-des">
+                    <view class="i-swipeout-des-h2">{{index + 1}}. {{item.article_title}}</view>
+                    <view class="i-swipeout-des-detail">{{item.article}}</view>
+                </view>
+            </view>
+            <view slot="button" class="i-swipeout-demo-button-group" style="background:#2db7f5;">
+                <view class="i-swipeout-demo-button" style="width:60px" bindtap="actionLike">
+                    <i-icon size="32" type="like_fill"></i-icon>
+                </view>
+                <view class="i-swipeout-demo-button" style="width:60px" bindtap="actionCancel">
+                    <i-icon size="32" type="delete_fill"></i-icon>
+                </view>
+            </view>
+        </i-swipeout>
+    </view>
+</view>

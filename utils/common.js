@@ -128,6 +128,30 @@ function requestTestResult_Option(callback, user_id) {
         }
     })
 }
+
+function requestArticle(callback, level_id) {
+    wx.request({
+        url: "https://huatu.project.tszho.me/api/article/requestArticle.php",
+        header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "POST",
+        data: {
+            level_id: level_id
+        },
+        success: res => {
+            if (res.data) {
+                //console.log('common.js : get loged2')
+                return typeof callback == "function" && callback(res.data, level_id)
+            } else {
+                return typeof callback == "function" && callback(false, level_id)
+            }
+        },
+        fail: function (res) {
+            console.log("requestArticle failed");
+        }
+    })
+}
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
@@ -135,5 +159,6 @@ function requestTestResult_Option(callback, user_id) {
      requestTestResult: requestTestResult,
      requestTestResult_Option: requestTestResult_Option,
      requestUserData: requestUserData,
-     submitTestResult: submitTestResult
+     submitTestResult: submitTestResult,
+     requestArticle: requestArticle
  }

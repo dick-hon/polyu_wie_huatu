@@ -11,7 +11,8 @@ Page({
         status: 'normal',
         question_number: 1,
         result: [],
-        activeName: '1'
+        activeName: '1',
+        test_title: ''
     },
     onChange(event) {
         this.setData({
@@ -87,7 +88,14 @@ Page({
         if (this.data.percent === 100) return;
 
     },
-    onShow() {
+    onShow(options) {
+        /*
+        console.log(this.options.id);
+        this.setData({
+            test_title: this.options.id
+        })
+        */
+
         console.log(this.data.question_number);
         var temp = this.data.question_number;
 
@@ -113,17 +121,8 @@ Page({
         //console.log(this.data.testDetail[0].question_answer); //undefined
         if (e.currentTarget.dataset.id == this.data.testDetail[0].question_answer) {
             isCorrect = 1;
-            //audio
-            const audio_correct = wx.createInnerAudioContext()
-            audio_correct.autoplay = true
-            audio_correct.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/correct.mp3'
-            audio_correct.onPlay(() => {
-                console.log('开始播放')
-            })
-            audio_correct.onError((res) => {
-                console.log(res.errMsg)
-                console.log(res.errCode)
-            })
+            //audio sounds
+            app.globalData.audio_correct.play();
             wx.showToast({
                 title: '恭喜!! 答對了!',
                 icon: '',
@@ -139,16 +138,7 @@ Page({
         } else {
             isCorrect = 0;
             //audio
-            const audio_fighting = wx.createInnerAudioContext()
-            audio_fighting.autoplay = true
-            audio_fighting.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/fighting.mp3'
-            audio_fighting.onPlay(() => {
-                console.log('开始播放')
-            })
-            audio_fighting.onError((res) => {
-                console.log(res.errMsg)
-                console.log(res.errCode)
-            })
+            app.globalData.audio_fighting.play();
             wx.showToast({
                 title: '對不起, 錯了!',
                 icon: '',
@@ -212,16 +202,8 @@ Page({
                 },
             })
             //audio
-            const audio_result = wx.createInnerAudioContext()
-            audio_result.autoplay = true
-            audio_result.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/result.mp3'
-            audio_result.onPlay(() => {
-                console.log('开始播放')
-            })
-            audio_result.onError((res) => {
-                console.log(res.errMsg)
-                console.log(res.errCode)
-            })
+            app.globalData.audio_result.play();
+
             var user_id = 1; // for testing only
             var that3 = this;
             app.func.requestTestResult(function(testResult) {

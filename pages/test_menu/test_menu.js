@@ -33,11 +33,19 @@ Page({
         if (e.currentTarget.dataset.id == 1) {
             wx.navigateTo({
                 // url: `../trip/trip?id=${ds.id}&name=${ds.name}`,
-                url: `../test/multiple_choice/multiple_choice`
+                // url: `../test/multiple_choice/multiple_choice`
+                url: '../article_list/article_list?id=1'
             });
-        } else {
+        }else if(e.currentTarget.dataset.id == 2) {
+            wx.navigateTo({
+                // url: `../trip/trip?id=${ds.id}&name=${ds.name}`,
+                // url: `../test/multiple_choice/multiple_choice`
+                url: '../test/multiple_choice/multiple_choice?id=p2&name=primary2'
+            });
+        } 
+        else {
             wx.showToast({
-                title: 'Primary 1 only',
+                title: 'Primary 1&2 only',
                 icon: '',
                 image: '../../img_temp/wrong.png',
                 duration: 1500,

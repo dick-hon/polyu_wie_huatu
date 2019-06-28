@@ -10,11 +10,15 @@ This project aims to build a interactive learning platform for primary student i
 > MAK Tsz Hong <br/>
 
 ## v1.1 (Beta Version)
-### v1.1
-> An prototype, support basic multiple choice test
+### v1.1.3
+> Supported article prototype
+> [x] Change path
+> [ ] fetch data from global varible
 ### v1.1.2
 > Enhanced user interface with sound effect
-> testing
+### v1.1
+> An prototype, support basic multiple choice test
+
 ## v1.0.X (Beta Version)
 ### v1.0.12
 > - [x] Enhanced Test result prototype with db connection <br/>

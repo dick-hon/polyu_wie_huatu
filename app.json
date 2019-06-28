@@ -4,6 +4,8 @@
         "pages/logs/logs",
         "pages/test_menu/test_menu",
         "pages/test/multiple_choice/multiple_choice",
+        "pages/article_list/article_list",
+        "pages/article/article",
         "pages/personal_Info/personal_Info",
         "pages/form/form"
     ],
