@@ -1,5 +1,5 @@
 # Huatu - 微信小程序 
-*Powered by PolyU WIE 2019 - Group H* <br/>
+> * Powered by PolyU WIE 2019 - Group H <br/>
 This project aims to build a interactive learning platform for primary student in WeChat Mini Program.
 
 ## Team List
@@ -11,7 +11,7 @@ This project aims to build a interactive learning platform for primary student i
 
 ## v1.1 (Beta Version)
 ### v1.1.3
-> Supported article prototype
+> Supported article prototype <br/>
 > [x] Change path
 ### v1.1.2
 > Enhanced user interface with sound effect
