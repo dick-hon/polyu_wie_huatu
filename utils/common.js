@@ -176,6 +176,30 @@ function requestArticleSpecific(callback, article_id) {
         }
     })
 }
+
+function requestJsonQuestionRecord(callback, q_num) {
+    wx.request({
+        url: "https://huatu.project.tszho.me/api/test/multiple_choice/json_questionRecord.php",
+        header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "POST",
+        data: {
+            q_num: q_num
+        },
+        success: res => {
+            if (res.data) {
+                //console.log('common.js : get loged2')
+                return typeof callback == "function" && callback(res.data, q_num)
+            } else {
+                return typeof callback == "function" && callback(false, q_num)
+            }
+        },
+        fail: function (res) {
+            console.log("requestJsonQuestionRecord failed");
+        }
+    })
+}
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestOption: requestTestOption,
@@ -185,5 +209,6 @@ function requestArticleSpecific(callback, article_id) {
      requestUserData: requestUserData,
      submitTestResult: submitTestResult,
      requestArticle: requestArticle,
-     requestArticleSpecific: requestArticleSpecific
+     requestArticleSpecific: requestArticleSpecific,
+     requestJsonQuestionRecord: requestJsonQuestionRecord
  }

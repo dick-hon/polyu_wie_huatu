@@ -71,6 +71,7 @@ App({
         submitTestResult: common_js.submitTestResult,
         requestUserData: common_js.requestUserData,
         requestArticle: common_js.requestArticle,
-        requestArticleSpecific: common_js.requestArticleSpecific
+        requestArticleSpecific: common_js.requestArticleSpecific,
+        requestJsonQuestionRecord: common_js.requestJsonQuestionRecord
     }
 });

@@ -8,7 +8,9 @@ Page({
         userInfo: {},
         hasUserInfo: false,
         userData: {},
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        json_questionRecord: {},
+        json_index: 1
     },
     //事件处理函数
     bindViewTap: function() {
@@ -69,6 +71,24 @@ Page({
     ifUserInDB: function() {
         //console.log(this.data.userData);
         //console.log(app.globalData.audio_correct.src);
-        app.globalData.audio_correct.play();
+        //app.globalData.audio_correct.play();
+
+        //json_api Testing ==> OK
+        var temp = 15;
+        var that = this;
+        app.func.requestJsonQuestionRecord(function (json_questionRecord) {
+            console.log(json_questionRecord);
+            that.setData({
+                json_questionRecord: json_questionRecord
+            });
+        }, temp)
+    },
+    next: function() {
+        //console.log(json_questionRecord[this.data.json_index])
+        //console.log(thid.data.json_questionRecord)
+        console.log(this.data.json_questionRecord[this.data.json_index]);
+        this.setData({
+            json_index: this.data.json_index + 1
+        })
     }
 })

@@ -10,6 +10,7 @@
         </view>
         <view>华图教育 - 微信小程序 DEMO </view>
         <button bindtap='ifUserInDB'>getUserData</button>
+        <button bindtap='next'>Next</button>
         <image src="../../img_temp/temp.jpg" />
     </view>
 <!-- </view> -->

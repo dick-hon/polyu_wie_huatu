@@ -20,23 +20,18 @@
     </view>
 </i-page>
 -->
-<block wx:if="{{question_number <= 10}}">
-    <view class="goods-container">
+<block wx:if="{{question_number <= 9}}">
+    <view class="goods-container" wx:for="{{json_questionRecord}}" wx:key="q_id" wx:if="{{index == question_number}}">
         <!-- Question Title -->
-        <view wx:for="{{testDetail}}">
-            <view class="recommend-title">{{question_number}}.{{item.question_title}}</view>
-        </view>
+        <view class="recommend-title">{{index + 1}}.{{item.question_title}} </view>
         <!-- Answer Box -->
-        <view class="goods-box" wx:for="{{testOption}}" bindtap="checkAnswer" data-id="{{item.answer_id}}">
+        <view class="goods-box" wx:for="{{item.question_content}}" wx:for-item="question_content" wx:key="answer_id" bindtap="checkAnswer" data-id="{{question_content.answer_id}}">
             <view class="img-box">
-                <image src="{{item.url}}" class="image" mode="aspectFill" lazy-load="true" />
+                <image src="{{question_content.url}}" class="image" mode="aspectFill" lazy-load="true" />
             </view>
-            <view class="good-title">{{item.answer_title}}</view>
+            <view class="good-title">{{question_content.answer_title}}</view>
         </view>
     </view>
-    <!-- >
-        <i-page current="{{ question_number }}" total="5" mode="pointer" bind:change="handleChange"></i-page>
-        -->
 </block>
 <block wx:else>
     <i-divider content="我 的 成 績 表" lineColor="#495060"></i-divider>
@@ -60,7 +55,7 @@
                     <view> Correct: No </view>
                 </block>
             </van-collapse-item>
-           <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
         </van-collapse>
     </view>
 </block>

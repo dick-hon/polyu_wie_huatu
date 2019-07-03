@@ -10,11 +10,13 @@
 > MAK Tsz Hong <br/>
 
 ## v1.1 (Beta Version)
+### v1.1.5
+> Supported fetch data with nested json format
 ### v1.1.4
 > Enhanced article prototype 
 ### v1.1.3
 > Supported article prototype <br/>
-> [ x ] Change path
+> - [x] Change path
 ### v1.1.2
 > Enhanced user interface with sound effect
 ### v1.1
