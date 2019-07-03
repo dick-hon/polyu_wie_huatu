@@ -120,15 +120,6 @@ Page({
                     testResult: testResult
                 });
             }, user_id)
-
-            var that4 = this;
-            app.func.requestTestResult_Option(function(testResult_Option) {
-                console.log(testResult_Option);
-                that4.setData({
-                    testResult_Option: testResult_Option
-                });
-            }, user_id)
-
         }
     },
     onPageScroll(e) {

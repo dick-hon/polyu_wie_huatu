@@ -54,6 +54,21 @@
                 <block wx:else>
                     <view> Correct: No </view>
                 </block>
+                <!-- >
+                <view wx:for="{{item.question_content}}" wx:for-item="question_content">
+                    answer id: {{question_content.answer_id}} <br/>
+                    answer title: {{question_content.answer_title}} <br/>
+                </view>
+                -->
+                <view class="goods-container-result">
+                    <view class="goods-box-result" wx:for="{{item.question_content}}" wx:for-item="question_content">
+                        <view class="img-box-result">
+                            <image src="{{question_content.url}}" class="image-result" mode="aspectFill" lazy-load="true" />
+                        </view>
+                        <view class="good-title">{{question_content.answer_title}}</view>
+                    </view>
+                </view>
+
             </van-collapse-item>
             <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
         </van-collapse>
