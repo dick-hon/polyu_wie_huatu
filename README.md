@@ -10,6 +10,8 @@
 > MAK Tsz Hong <br/>
 
 ## v1.1 (Beta Version)
+### v1.1.6
+> Enhanced GUI test result page 
 ### v1.1.5
 > Supported fetch data with nested json format
 ### v1.1.4

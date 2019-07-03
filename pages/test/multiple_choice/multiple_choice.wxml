@@ -63,7 +63,19 @@
                 <view class="goods-container-result">
                     <view class="goods-box-result" wx:for="{{item.question_content}}" wx:for-item="question_content">
                         <view class="img-box-result">
-                            <image src="{{question_content.url}}" class="image-result" mode="aspectFill" lazy-load="true" />
+                            <!-- correct = 1, correct;  correct = 0, incorrect -->
+                            <block wx:if="{{item.correct == 1}}">
+                            <image src="{{question_content.url}}"
+                                   class="image-result {{item.answer==question_content.answer_id ?'image-green':''}}" 
+                                   mode="aspectFill" 
+                                   lazy-load="true"/>
+                            </block>
+                            <block wx:else>
+                                <image src="{{question_content.url}}"
+                                   class="image-result {{item.answer==question_content.answer_id ?'image-red':''}}{{item.question_answer==question_content.answer_id ?'image-green':''}}" 
+                                   mode="aspectFill" 
+                                   lazy-load="true"/>
+                            </block>
                         </view>
                         <view class="good-title">{{question_content.answer_title}}</view>
                     </view>
