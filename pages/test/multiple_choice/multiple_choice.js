@@ -89,8 +89,9 @@ Page({
 
     },
     onShow(options) {
-        /*
+        
         console.log(this.options.id);
+        /*
         this.setData({
             test_title: this.options.id
         })

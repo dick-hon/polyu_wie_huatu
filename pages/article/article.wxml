@@ -3,15 +3,16 @@
         <view wx:for="{{article_specific}}" data-id="{{item.article_id}}">
             <view class="page__title">{{item.article_title}}</view>
             <view class="page__desc">Editor: XXX</view>
-        <view class="page__bd">
-            <view class="weui-article">
-                <view class="weui-article__section">
+            <view class="page__bd">
+                <view class="weui-article">
                     <view class="weui-article__section">
-                        <view class="weui-article__p">{{item.article}}</view>
+                        <view class="weui-article__section">
+                            <view class="weui-article__p">{{item.article}}</view>
+                        </view>
                     </view>
                 </view>
+                <i-button bind:click="startExercise" type="success" shape="circle" size="small">Exercise</i-button>
             </view>
-        </view>
         </view>
     </view>
 </view>

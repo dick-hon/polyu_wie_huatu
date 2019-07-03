@@ -24,5 +24,10 @@ Page({
         this.setData({
             scrollTop: e.scrollTop
         })
+    },
+    startExercise: function () {
+        wx.navigateTo({
+            url: `../test/multiple_choice/multiple_choice?id=${this.data.article_id}`,
+        });
     }
 })
