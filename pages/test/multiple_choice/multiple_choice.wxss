@@ -43,9 +43,9 @@ swiper-item image {
     text-align: center;
     /*font-size: 38rpx;*/
     height: 38rpx;
-    line-height: 38rpx;
+    line-height: 50rpx;
     /* margin-top: 50rpx; */
-    margin-bottom: 20rpx;
+    margin-bottom: 70rpx;
 }
 
 .goods-container {
@@ -95,6 +95,9 @@ swiper-item image {
     margin-left: 24rpx;
 }
 
+.good-title {
+    text-align: center;
+}
 .weui-cells {
     background: none;
     font-size: 26rpx;

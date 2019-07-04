@@ -18,7 +18,7 @@ Page({
             url: '../logs/logs'
         })
     },
-    onLoad: function() {
+    onShow: function() {
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
@@ -69,11 +69,12 @@ Page({
         })
     },
     ifUserInDB: function() {
-        //console.log(this.data.userData);
+        console.log(this.data.userData);
         //console.log(app.globalData.audio_correct.src);
         //app.globalData.audio_correct.play();
 
         //json_api Testing ==> OK
+        /*
         var temp = 15;
         var that = this;
         app.func.requestJsonQuestionRecord(function (json_questionRecord) {
@@ -82,6 +83,7 @@ Page({
                 json_questionRecord: json_questionRecord
             });
         }, temp)
+        */
     },
     next: function() {
         //console.log(json_questionRecord[this.data.json_index])

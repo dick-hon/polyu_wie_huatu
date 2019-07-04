@@ -5,30 +5,25 @@ const {
 
 Page({
     data: {
-        testDetail: {}, //title, ans
-        testOption: {}, //mc
+        json_questionRecord: {}, //to stores all question records in json
         testResult: {},
-        testResult_Option: {},
+        numberOfQuestion: 10,
+        question_number: 0, //starts from index[0]
         percent: 0, //bar
         status: 'normal',
-        numberOfQuestion: 10,
-        question_number: 9, //starts from index[0]
-        result: [],
         activeName: '1',
         level_id: '',
-        json_questionRecord: {} //to stores all question records in json
+        isFinish: false //to ensure the button will be shown only after testResult{} is done
     },
-    onChange(event) {
+    onChange(event) { // van-collapse components
         this.setData({
             activeName: event.detail
         });
     },
     onShow(options) {
-        //console.log(this.options.id);
         this.setData({
             level_id: this.options.id
         })
-        //console.log(this.data.numberOfQuestion);
         var temp = this.data.numberOfQuestion;
         var that = this;
         app.func.requestJsonQuestionRecord(function(json_questionRecord) {
@@ -38,10 +33,9 @@ Page({
             });
         }, temp)
     },
-    checkAnswer: function(e) { //to create a button for answering the questions 
+    checkAnswer: function(e) {
         console.log(e.currentTarget.dataset.id);
         var isCorrect;
-        //console.log(this.data.testDetail[0].question_answer); //undefined
         if (e.currentTarget.dataset.id == this.data.json_questionRecord[this.data.question_number].question_answer) {
             isCorrect = 1;
             //audio sounds
@@ -94,30 +88,33 @@ Page({
                     content: '還差5題!!加油!'
                 });
             }
-            //console.log(this.data.question_number);
             console.log(this.data.json_questionRecord[this.data.question_number]);
         } else {
-            wx.showToast({
-                title: '完成了!',
-                icon: '',
-                image: '../../../img_temp/correct.png',
-                duration: 1500,
-                mask: true,
-                success: function(res) {
-                    setTimeout(function() {
-                        //wx.navigateBack()
-                    }, 1500)
-                },
-            })
-            //audio
-            app.globalData.audio_result.play();
+            setTimeout(function() {
+                wx.showToast({
+                    title: '完成了!',
+                    icon: '',
+                    image: '../../../img_temp/correct.png',
+                    duration: 1500,
+                    mask: true,
+                    success: function(res) {
+                        setTimeout(function() {
+                            //wx.navigateBack()
+                        }, 1500)
+                    },
+                })
+                app.globalData.audio_bgm_mc.stop();
+                //audio
+                app.globalData.audio_result.play();
+            }, 1000)
 
             var user_id = 1; // for testing only
             var that3 = this;
             app.func.requestTestResult(function(testResult) {
                 console.log(testResult);
                 that3.setData({
-                    testResult: testResult
+                    testResult: testResult,
+                    isFinish: true
                 });
             }, user_id)
         }
@@ -126,6 +123,11 @@ Page({
         let scrollTop = this.data.scrollTop
         this.setData({
             scrollTop: e.scrollTop
+        })
+    },
+    homepage: function() {
+        wx.switchTab({
+            url: '../../index/index'
         })
     }
 })
