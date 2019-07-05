@@ -2,19 +2,19 @@
 var common_js = require('utils/common.js')
 
 App({
-    onLaunch: function () {
+    onLaunch: function() {
         console.log('App Launch')
     },
-    onShow: function () {
+    onShow: function() {
         console.log('App Show')
     },
-    onHide: function () {
+    onHide: function() {
         console.log('App Hide')
     },
     globalData: {
         hasLogin: false
     },
-    onLaunch: function () {
+    onLaunch: function() {
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
@@ -66,12 +66,14 @@ App({
 
         wx.onAppRoute((route) => {
             //console.log(route);
-            if(route.path !== 'pages/test/multiple_choice/multiple_choice') {
-                this.globalData.audio_bgm_mc.stop();
-                this.globalData.audio_bgm.play();
-            }else {
-                this.globalData.audio_bgm.stop();
-                this.globalData.audio_bgm_mc.play();
+            if (this.globalData.soundOn == true) {
+                if (route.path !== 'pages/test/multiple_choice/multiple_choice') {
+                    this.globalData.audio_bgm_mc.stop();
+                    this.globalData.audio_bgm.play();
+                } else {
+                    this.globalData.audio_bgm.stop();
+                    this.globalData.audio_bgm_mc.play();
+                }
             }
         })
 
@@ -82,7 +84,8 @@ App({
         audio_fighting: null,
         audio_result: null,
         audio_bgm_mc: null,
-        audio_bgm: null
+        audio_bgm: null,
+        soundOn: false
     },
     //define all api connection
     func: {
@@ -94,6 +97,7 @@ App({
         requestJsonQuestionRecord: common_js.requestJsonQuestionRecord,
         requestCollection: common_js.requestCollection,
         submitCollection: common_js.submitCollection,
-        requestCollectionSpecific: common_js.requestCollectionSpecific
+        requestCollectionSpecific: common_js.requestCollectionSpecific,
+        cancelCollection: common_js.cancelCollection
     }
 });

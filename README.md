@@ -12,6 +12,7 @@
 ## v1.1 (Beta Version)
 ### v1.1.8
 > Supported user's reading article collections
+> - [x] Setting page
 ### v1.1.7
 > Supported background music
 ### v1.1.6
@@ -28,10 +29,10 @@
 ### v1.1
 > An prototype, support basic multiple choice test
 
-## v1.0.X (Beta Version)
+## v1.0.X (Alpha Version)
 ### v1.0.12
 > - [x] Enhanced Test result prototype with db connection <br/>
-> - [ ] Option function 
+> - [x] Option function 
 ### v1.0.11
 > Enhanced background-image and tabbar
 ### v1.0.10

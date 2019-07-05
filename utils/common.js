@@ -178,29 +178,48 @@
      })
  }
 
-function requestCollectionSpecific(callback, user_id) {
-    wx.request({
-        url: "https://huatu.project.tszho.me/api/collection/requestCollectionSpecific.php",
-        header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        method: "POST",
-        data: {
-            user_id: user_id
-        },
-        success: res => {
-            if (res.data) {
-                //console.log('common.js : get loged2')
-                return typeof callback == "function" && callback(res.data, user_id)
-            } else {
-                return typeof callback == "function" && callback(false, user_id)
-            }
-        },
-        fail: function (res) {
-            console.log("requestCollectionSpecific failed");
-        }
-    })
-}
+ function requestCollectionSpecific(callback, user_id) {
+     wx.request({
+         url: "https://huatu.project.tszho.me/api/collection/requestCollectionSpecific.php",
+         header: {
+             "Content-Type": "application/x-www-form-urlencoded"
+         },
+         method: "POST",
+         data: {
+             user_id: user_id
+         },
+         success: res => {
+             if (res.data) {
+                 //console.log('common.js : get loged2')
+                 return typeof callback == "function" && callback(res.data, user_id)
+             } else {
+                 return typeof callback == "function" && callback(false, user_id)
+             }
+         },
+         fail: function(res) {
+             console.log("requestCollectionSpecific failed");
+         }
+     })
+ }
+
+function cancelCollection(cancelData) {
+     wx.request({
+         url: "https://huatu.project.tszho.me/api/collection/cancelCollection.php",
+         header: {
+             "Content-Type": "application/x-www-form-urlencoded"
+         },
+         method: "POST",
+         data: {
+            collection_id: cancelData
+         },
+         success: res => {
+             console.log("cancelCollection successed");
+         },
+         fail: function(res) {
+             console.log("cancelCollection failed");
+         }
+     })
+ }
  //This define the app.func.requestTestOption at test.js page.
  module.exports = {
      requestTestResult: requestTestResult,
@@ -211,5 +230,6 @@ function requestCollectionSpecific(callback, user_id) {
      requestJsonQuestionRecord: requestJsonQuestionRecord,
      requestCollection: requestCollection,
      submitCollection: submitCollection,
-     requestCollectionSpecific: requestCollectionSpecific
+     requestCollectionSpecific: requestCollectionSpecific,
+     cancelCollection: cancelCollection
  }

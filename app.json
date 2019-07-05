@@ -9,7 +9,8 @@
         "pages/personal_Info/personal_Info",
         "pages/form/form",
         "pages/collection_list/collection_list",
-        "pages/collection/collection"
+        "pages/collection/collection",
+        "pages/setting/setting"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -48,6 +49,12 @@
                     "text": "個人資料",
                     "iconPath": "/img_temp/tabbar/personal_Info.png",
                     "selectedIconPath": "/img_temp/tabbar/personal_Info.png"
+                },
+                {
+                    "pagePath": "pages/setting/setting",
+                    "text": "設定",
+                    "iconPath": "/img_temp/tabbar/setting.png",
+                    "selectedIconPath": "/img_temp/tabbar/setting.png"
                 }
             ],
             "selectedColor": "#f55b70"

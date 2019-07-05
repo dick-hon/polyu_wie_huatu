@@ -1,8 +1,6 @@
 const app = getApp()
 Page({
     data: {
-        article_target: '',
-        article: {},
         collections: {},
         clicked: false // to avoid change page after clicked like/ cancel
     },
@@ -24,8 +22,28 @@ Page({
             scrollTop: e.scrollTop
         })
     },
-    actionUnlike: function() {
+    actionUnlike(e) {
         console.log("unlike!");
+        console.log(e.currentTarget.dataset.id);
+        //to pass the corrsponding question result to db
+        //================================== TODO: get user_id
+        var temp = 1;
+        //console.log(this.data.article[e.currentTarget.dataset.id].article_id);
+        //console.log(temp);
+        //var submitData = [this.data.collections[e.currentTarget.dataset.id].article_id, temp];        
+        var cancelData = e.currentTarget.dataset.id;
+        app.func.cancelCollection(cancelData);
+        //update lastest collection_list
+        //=============================== TODO: get user_id 
+        // var temp = this.data.user_id;
+        var temp = 1;
+        var that = this;
+        app.func.requestCollection(function (collections) {
+            console.log(collections);
+            that.setData({
+                collections: collections
+            });
+        }, temp)
         this.setData({
             clicked: true
         })

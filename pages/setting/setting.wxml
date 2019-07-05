@@ -1,0 +1,17 @@
+<i-panel title="聲音">
+    <!-- >
+    <i-cell-group>
+        <i-cell title="Layout 栅格布局" is-link url="/pages/layout/index"></i-cell>
+        <i-cell title="Grid 宫格" is-link url="/pages/grid/index"></i-cell>
+        <i-cell title="Panel 面板" is-link url="/pages/panel/index"></i-cell>
+        <i-cell title="List 列表" is-link url="/pages/list/index"></i-cell>
+        <i-cell title="Card 卡片" is-link url="/pages/card/index"></i-cell>
+    </i-cell-group>
+-->
+    <i-cell-group>
+        <i-cell title="背景音樂">
+            <i-switch value="{{soundSwitch}}" bind:change="soundSwitch" slot="footer"></i-switch>
+        </i-cell>
+    </i-cell-group>
+
+</i-panel>

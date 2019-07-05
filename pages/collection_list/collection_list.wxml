@@ -12,7 +12,7 @@
                 </view>
             </view>
             <view slot="button" class="i-swipeout-demo-button-group" style="background:#2db7f5;">
-                <view class="i-swipeout-demo-button" style="width:60px" bindtap="actionUnlike">
+                <view class="i-swipeout-demo-button" style="width:60px" data-id="{{item.collection_id}}" bindtap="actionUnlike">
                     <i-icon size="32" type="undo"></i-icon>
                 </view>
                 <view class="i-swipeout-demo-button" style="width:60px" bindtap="actionCancel">
