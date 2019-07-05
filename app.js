@@ -48,29 +48,29 @@ App({
         })
         //get audio from server to prevent loading delay.
         this.globalData.audio_bgm_mc = wx.createInnerAudioContext()
-        this.globalData.audio_bgm_mc.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/bensound-littleidea.mp3'
+        this.globalData.audio_bgm_mc.src = 'https://huatu.project.tszho.me/front-end/multiple_choice/FunnyBone.mp3'
         this.globalData.audio_bgm_mc.loop = true;
 
         this.globalData.audio_bgm = wx.createInnerAudioContext()
-        this.globalData.audio_bgm.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/background_all.mp3'
+        this.globalData.audio_bgm.src = 'https://huatu.project.tszho.me/front-end/bgm_new_happy_day.mp3'
         this.globalData.audio_bgm.loop = true;
 
         this.globalData.audio_correct = wx.createInnerAudioContext()
-        this.globalData.audio_correct.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/correct.mp3'
+        this.globalData.audio_correct.src = 'https://huatu.project.tszho.me/front-end/multiple_choice/correct.mp3'
 
         this.globalData.audio_fighting = wx.createInnerAudioContext()
-        this.globalData.audio_fighting.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/fighting.mp3'
+        this.globalData.audio_fighting.src = 'https://huatu.project.tszho.me/front-end/multiple_choice/fighting.mp3'
 
         this.globalData.audio_result = wx.createInnerAudioContext()
-        this.globalData.audio_result.src = 'https://huatu.project.tszho.me/CoolAdmin-master/images/front-end/multiple_choice/result.mp3'
+        this.globalData.audio_result.src = 'https://huatu.project.tszho.me/front-end/multiple_choice/result.mp3'
 
         wx.onAppRoute((route) => {
             //console.log(route);
             if(route.path !== 'pages/test/multiple_choice/multiple_choice') {
                 this.globalData.audio_bgm_mc.stop();
-                //this.globalData.audio_bgm.play();
+                this.globalData.audio_bgm.play();
             }else {
-                //this.globalData.audio_bgm.stop();
+                this.globalData.audio_bgm.stop();
                 this.globalData.audio_bgm_mc.play();
             }
         })
@@ -91,6 +91,9 @@ App({
         requestUserData: common_js.requestUserData,
         requestArticle: common_js.requestArticle,
         requestArticleSpecific: common_js.requestArticleSpecific,
-        requestJsonQuestionRecord: common_js.requestJsonQuestionRecord
+        requestJsonQuestionRecord: common_js.requestJsonQuestionRecord,
+        requestCollection: common_js.requestCollection,
+        submitCollection: common_js.submitCollection,
+        requestCollectionSpecific: common_js.requestCollectionSpecific
     }
 });

@@ -7,7 +7,9 @@
         "pages/article_list/article_list",
         "pages/article/article",
         "pages/personal_Info/personal_Info",
-        "pages/form/form"
+        "pages/form/form",
+        "pages/collection_list/collection_list",
+        "pages/collection/collection"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -34,6 +36,12 @@
                     "text": "測驗",
                     "iconPath": "/img_temp/tabbar/test.png",
                     "selectedIconPath": "/img_temp/tabbar/test.png"
+                },
+                {
+                    "pagePath": "pages/collection_list/collection_list",
+                    "text": "我的收藏",
+                    "iconPath": "/img_temp/tabbar/collection.png",
+                    "selectedIconPath": "/img_temp/tabbar/collection.png"
                 },
                 {
                     "pagePath": "pages/personal_Info/personal_Info",

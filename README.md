@@ -10,6 +10,8 @@
 > MAK Tsz Hong <br/>
 
 ## v1.1 (Beta Version)
+### v1.1.8
+> Supported user's reading article collections
 ### v1.1.7
 > Supported background music
 ### v1.1.6

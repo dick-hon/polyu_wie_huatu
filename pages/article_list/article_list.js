@@ -57,8 +57,17 @@ Page({
             scrollTop: e.scrollTop
         })
     },
-    actionLike() {
+    actionLike: function(e) {
         console.log("like!");
+        console.log(this.data.article[e.currentTarget.dataset.id]);
+        //to pass the corrsponding question result to db
+        //================================== TODO: get user_id
+        var temp = 1;
+        //console.log(this.data.article[e.currentTarget.dataset.id].article_id);
+        //console.log(temp);
+        var submitData = [this.data.article[e.currentTarget.dataset.id].article_id, temp];
+        app.func.submitCollection(submitData);
+
         this.setData({
             clicked: true
         })
@@ -70,7 +79,7 @@ Page({
         })
     },
     clickArticle: function(e) {
-        if(this.data.clicked == false) {
+        if (this.data.clicked == false) {
             console.log(e.currentTarget.dataset.id);
             wx.navigateTo({
                 // Sytnax: ``,

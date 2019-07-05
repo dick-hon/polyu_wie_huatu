@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "閱讀文章",
+    "navigationBarTitleText": "我的收藏",
     "usingComponents": {
         "i-swipeout": "../../library/iview/swipeout/index",
         "i-cell-group": "../../library/iview/cell-group/index",
