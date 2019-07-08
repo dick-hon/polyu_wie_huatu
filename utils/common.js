@@ -2,6 +2,9 @@
  // can use post method 
  function requestTestResult(callback, user_id) {
      console.log(user_id);
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/test/test_result/requestTestResult.php",
          header: {
@@ -12,6 +15,7 @@
              user_id: user_id
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, user_id)
@@ -20,6 +24,7 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("testAns failed");
          }
      })
@@ -37,11 +42,20 @@
              user_answer: resultData[1],
              isCorrect: resultData[2],
              userID: resultData[3]
+         },
+         success: res => {
+             //wx.hideLoading();
+         },
+         fail: function(res) {
+             //wx.hideLoading();
          }
      })
  }
 
  function requestUserData(callback, user_id) {
+     wx.showLoading({
+         title: '加载中',
+     })
      var api_url = 'https://huatu.project.tszho.me/api/user/getUserInfo.php?user_id=' + user_id;
      wx.request({
          url: api_url,
@@ -49,6 +63,7 @@
              'Content-Type': 'application/json'
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  return typeof callback == "function" && callback(res.data, user_id)
              } else {
@@ -56,12 +71,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("common.js getUser data failed");
          }
      })
  }
 
  function requestArticle(callback, level_id) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/article/requestArticle.php",
          header: {
@@ -72,6 +91,7 @@
              level_id: level_id
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, level_id)
@@ -80,12 +100,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("requestArticle failed");
          }
      })
  }
 
  function requestArticleSpecific(callback, article_id) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/article/requestArticleSpecific.php",
          header: {
@@ -96,6 +120,7 @@
              article_id: article_id
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, article_id)
@@ -104,12 +129,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("requestArticleSpecific failed");
          }
      })
  }
 
  function requestJsonQuestionRecord(callback, q_num) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/test/multiple_choice/json_questionRecord.php",
          header: {
@@ -120,6 +149,7 @@
              q_num: q_num
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, q_num)
@@ -128,12 +158,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("requestJsonQuestionRecord failed");
          }
      })
  }
 
  function requestCollection(callback, user_id) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/collection/requestCollection.php",
          header: {
@@ -144,6 +178,7 @@
              user_id: user_id
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, user_id)
@@ -152,12 +187,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("requestCollection failed");
          }
      })
  }
 
  function submitCollection(submitData) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/collection/submitCollection.php",
          header: {
@@ -170,15 +209,20 @@
              user_id: submitData[1]
          },
          success: res => {
+             wx.hideLoading();
              console.log("submitCollection successed");
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("submitCollection failed");
          }
      })
  }
 
  function requestCollectionSpecific(callback, user_id) {
+     wx.showLoading({
+         title: '加载中',
+     })
      wx.request({
          url: "https://huatu.project.tszho.me/api/collection/requestCollectionSpecific.php",
          header: {
@@ -189,6 +233,7 @@
              user_id: user_id
          },
          success: res => {
+             wx.hideLoading();
              if (res.data) {
                  //console.log('common.js : get loged2')
                  return typeof callback == "function" && callback(res.data, user_id)
@@ -197,12 +242,16 @@
              }
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("requestCollectionSpecific failed");
          }
      })
  }
 
 function cancelCollection(cancelData) {
+    wx.showLoading({
+        title: '加载中',
+    })
      wx.request({
          url: "https://huatu.project.tszho.me/api/collection/cancelCollection.php",
          header: {
@@ -213,9 +262,11 @@ function cancelCollection(cancelData) {
             collection_id: cancelData
          },
          success: res => {
+             wx.hideLoading();
              console.log("cancelCollection successed");
          },
          fail: function(res) {
+             wx.hideLoading();
              console.log("cancelCollection failed");
          }
      })

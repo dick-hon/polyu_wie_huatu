@@ -2,7 +2,7 @@
     <view class="page__hd">
         <view wx:for="{{article_specific}}" data-id="{{item.article_id}}">
             <view class="page__title">{{item.article_title}}</view>
-            <view class="page__desc">Editor: XXX</view>
+            <view class="page__desc">文章: {{article_target}}</view>
             <view class="page__bd">
                 <view class="weui-article">
                     <view class="weui-article__section">

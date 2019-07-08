@@ -2,14 +2,48 @@ const app = getApp()
 Page({
     data: {
         article_id: '',
+        level_id: '',
+        article_target: '',
         article_specific: {},
         clicked: false // to avoid change page after clicked like/ cancel
     },
     onShow(options) {
         this.setData({
-            article_id: this.options.id
+            article_id: this.options.id,
+            level_id: this.options.level_id
         })
-        console.log("article_id" + this.data.article_id);
+        switch (this.data.level_id) {
+            case '1':
+                this.setData({
+                    article_target: "小學一年級"
+                })
+                break;
+            case '2':
+                this.setData({
+                    article_target: "小學二年級"
+                })
+                break;
+            case '3':
+                this.setData({
+                    article_target: "小學三年級"
+                })
+                break;
+            case '4':
+                this.setData({
+                    article_target: "小學四年級"
+                })
+                break;
+            case '5':
+                this.setData({
+                    article_target: "小學五年級"
+                })
+                break;
+            case '6':
+                this.setData({
+                    article_target: "小學六年級"
+                })
+                break;
+        }
         var temp = this.data.article_id;
         var that = this;
         app.func.requestArticleSpecific(function (article_specific) {

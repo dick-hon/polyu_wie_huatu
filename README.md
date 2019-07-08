@@ -10,6 +10,8 @@
 > MAK Tsz Hong <br/>
 
 ## v1.1 (Beta Version)
+### v1.1.10
+> Supported API loading icon 
 ### v1.1.9
 > Supported get userID connected with weChat function
 ### v1.1.8

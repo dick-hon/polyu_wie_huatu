@@ -42,9 +42,13 @@ Page({
                 })
                 break;
         }
+        wx.showLoading({
+            title: '加载中',
+        })
         var temp = this.data.level_id;
         var that = this;
         app.func.requestArticle(function(article) {
+            wx.hideLoading();
             console.log(article);
             that.setData({
                 article: article
@@ -61,13 +65,10 @@ Page({
         console.log("like!");
         console.log(this.data.article[e.currentTarget.dataset.id]);
         //to pass the corrsponding question result to db
-        //================================== TODO: get user_id
-        var temp = 1;
-        //console.log(this.data.article[e.currentTarget.dataset.id].article_id);
-        //console.log(temp);
+        var temp = app.globalData.userID;
         var submitData = [this.data.article[e.currentTarget.dataset.id].article_id, temp];
         app.func.submitCollection(submitData);
-
+        wx.hideLoading();
         this.setData({
             clicked: true
         })
@@ -83,7 +84,7 @@ Page({
             console.log(e.currentTarget.dataset.id);
             wx.navigateTo({
                 // Sytnax: ``,
-                url: `../article/article?id=${e.currentTarget.dataset.id}`,
+                url: `../article/article?id=${e.currentTarget.dataset.id}&level_id=${this.data.level_id}`,
             });
         } else {
             this.setData({
