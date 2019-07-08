@@ -54,6 +54,7 @@
                 <block wx:else>
                     <view> Correct: No </view>
                 </block>
+                <view>解釋: {{item.question_tips}}</view>
                 <!-- >
                 <view wx:for="{{item.question_content}}" wx:for-item="question_content">
                     answer id: {{question_content.answer_id}} <br/>

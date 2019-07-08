@@ -33,10 +33,10 @@
          },
          method: "POST",
          data: {
-             //TODO: user_id;
              q_id: resultData[0],
              user_answer: resultData[1],
-             isCorrect: resultData[2]
+             isCorrect: resultData[2],
+             userID: resultData[3]
          }
      })
  }

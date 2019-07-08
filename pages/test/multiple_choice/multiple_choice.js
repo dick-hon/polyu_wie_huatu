@@ -70,7 +70,8 @@ Page({
             })
         }
         //to pass the corrsponding question result to db
-        var resultData = [this.data.json_questionRecord[this.data.question_number].q_id, e.currentTarget.dataset.id, isCorrect];
+        var resultData = [this.data.json_questionRecord[this.data.question_number].q_id, e.currentTarget.dataset.id, isCorrect, app.globalData.userID];
+        console.log(app.globalData.userID);
         app.func.submitTestResult(resultData);
         //TODO: CHECK CONDITION HERE
         this.setData({
@@ -108,7 +109,7 @@ Page({
                 app.globalData.audio_result.play();
             }, 1000)
 
-            var user_id = 1; // for testing only
+            var user_id = app.globalData.userID; // for testing only
             var that3 = this;
             app.func.requestTestResult(function(testResult) {
                 console.log(testResult);

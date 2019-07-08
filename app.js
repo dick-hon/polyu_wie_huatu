@@ -2,28 +2,72 @@
 var common_js = require('utils/common.js')
 
 App({
-    onLaunch: function() {
+    onLaunch: function () {
         console.log('App Launch')
     },
-    onShow: function() {
+    onShow: function () {
         console.log('App Show')
     },
-    onHide: function() {
+    onHide: function () {
         console.log('App Hide')
     },
     globalData: {
         hasLogin: false
     },
-    onLaunch: function() {
+    globalData: {
+        userInfo: null,
+        appid: 'wxf8d95f61a9af2b5b',
+        secret: '1bbfcf88325f79d78f229e7de9afb48c',
+        userID: null,
+        //wx openid of user
+        u_openid: '',
+        //DB user id
+        u_id: {},
+        audio_correct: null,
+        audio_fighting: null,
+        audio_result: null,
+        audio_bgm_mc: null,
+        audio_bgm: null,
+        soundOn: false
+    },
+    onLaunch: function () {
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
 
+        var that = this;
+
         // 登录
         wx.login({
             success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                if (res.code) {
+                    var d = that.globalData;
+                    console.log(that.globalData.appid)
+                    var api = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + d.appid + '&secret=' + d.secret + '&js_code=' + res.code + '&grant_type=authorization_code';
+                    console.log(res.code)
+                    wx.request({
+                        url: api,
+                        data: {},
+                        method: 'GET',
+                        success: res => {
+                            console.log(res)
+                            this.globalData.u_openid = res.data.openid
+
+                            var api = "https://huatu.project.tszho.me/api/auth/insertOpenID.php?openid=" + res.data.openid;
+                            wx.request({
+                                url: api,
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                success: res => {
+                                    console.log(res.data.userid)
+                                    this.globalData.userID = res.data.userid;
+                                }
+                            })
+                        }
+                    })
+                }
             }
         })
         // 获取用户信息
@@ -78,15 +122,6 @@ App({
         })
 
     },
-    globalData: {
-        userInfo: null,
-        audio_correct: null,
-        audio_fighting: null,
-        audio_result: null,
-        audio_bgm_mc: null,
-        audio_bgm: null,
-        soundOn: false
-    },
     //define all api connection
     func: {
         requestTestResult: common_js.requestTestResult,
@@ -97,7 +132,6 @@ App({
         requestJsonQuestionRecord: common_js.requestJsonQuestionRecord,
         requestCollection: common_js.requestCollection,
         submitCollection: common_js.submitCollection,
-        requestCollectionSpecific: common_js.requestCollectionSpecific,
-        cancelCollection: common_js.cancelCollection
+        requestCollectionSpecific: common_js.requestCollectionSpecific
     }
 });
