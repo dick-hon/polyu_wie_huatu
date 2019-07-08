@@ -5,9 +5,8 @@ Page({
         clicked: false // to avoid change page after clicked like/ cancel
     },
     onShow() {
-        //=============================== TODO: get user_id 
-        // var temp = this.data.user_id;
-        var temp = 1;
+        var temp = app.globalData.userID;
+        console.log(app.globalData.userID);
         var that = this;
         app.func.requestCollection(function(collections) {
             console.log(collections);
