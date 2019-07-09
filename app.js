@@ -132,6 +132,7 @@ App({
         requestJsonQuestionRecord: common_js.requestJsonQuestionRecord,
         requestCollection: common_js.requestCollection,
         submitCollection: common_js.submitCollection,
-        requestCollectionSpecific: common_js.requestCollectionSpecific
+        requestCollectionSpecific: common_js.requestCollectionSpecific,
+        cancelCollection: common_js.cancelCollection
     }
 });

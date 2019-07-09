@@ -5,15 +5,15 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 </view>
-<i-card title="閱讀能力" thumb="../../../img_temp/reading.png">
+<i-card title="閱讀能力" thumb="../../../resources/reading.png">
     <view slot="content">----</view>
     <view slot="footer">----</view>
 </i-card>
-<i-card title="理解能力" thumb="../../../img_temp/reading1.png">
+<i-card title="理解能力" thumb="../../../resources/reading1.png">
     <view slot="content">----</view>
     <view slot="footer">----</view>
 </i-card>
-<i-card title="綜合能力" thumb="../../../img_temp/star.png">
+<i-card title="綜合能力" thumb="../../../resources/star.png">
     <view slot="content">----</view>
     <view slot="footer">----</view>
 </i-card>

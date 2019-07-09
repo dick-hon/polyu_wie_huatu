@@ -1,13 +1,11 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/logs/logs",
         "pages/test_menu/test_menu",
         "pages/test/multiple_choice/multiple_choice",
         "pages/article_list/article_list",
         "pages/article/article",
         "pages/personal_Info/personal_Info",
-        "pages/form/form",
         "pages/collection_list/collection_list",
         "pages/collection/collection",
         "pages/setting/setting"
@@ -29,32 +27,32 @@
                 {
                     "pagePath": "pages/index/index",
                     "text": "首頁",
-                    "iconPath": "/img_temp/tabbar/index.png",
-                    "selectedIconPath": "/img_temp/tabbar/index.png"
+                    "iconPath": "/resources/tabbar/index.png",
+                    "selectedIconPath": "/resources/tabbar/index.png"
                 },
                 {
                     "pagePath": "pages/test_menu/test_menu",
                     "text": "測驗",
-                    "iconPath": "/img_temp/tabbar/test.png",
-                    "selectedIconPath": "/img_temp/tabbar/test.png"
+                    "iconPath": "/resources/tabbar/test.png",
+                    "selectedIconPath": "/resources/tabbar/test.png"
                 },
                 {
                     "pagePath": "pages/collection_list/collection_list",
                     "text": "我的收藏",
-                    "iconPath": "/img_temp/tabbar/collection.png",
-                    "selectedIconPath": "/img_temp/tabbar/collection.png"
+                    "iconPath": "/resources/tabbar/collection.png",
+                    "selectedIconPath": "/resources/tabbar/collection.png"
                 },
                 {
                     "pagePath": "pages/personal_Info/personal_Info",
                     "text": "個人資料",
-                    "iconPath": "/img_temp/tabbar/personal_Info.png",
-                    "selectedIconPath": "/img_temp/tabbar/personal_Info.png"
+                    "iconPath": "/resources/tabbar/personal_Info.png",
+                    "selectedIconPath": "/resources/tabbar/personal_Info.png"
                 },
                 {
                     "pagePath": "pages/setting/setting",
                     "text": "設定",
-                    "iconPath": "/img_temp/tabbar/setting.png",
-                    "selectedIconPath": "/img_temp/tabbar/setting.png"
+                    "iconPath": "/resources/tabbar/setting.png",
+                    "selectedIconPath": "/resources/tabbar/setting.png"
                 }
             ],
             "selectedColor": "#f55b70"

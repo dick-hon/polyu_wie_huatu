@@ -43,7 +43,7 @@ Page({
             wx.showToast({
                 title: '恭喜!! 答對了!',
                 icon: '',
-                image: '../../../img_temp/correct.png',
+                image: '../../../resources/correct.png',
                 duration: 1000,
                 mask: true,
                 success: function(res) {
@@ -59,7 +59,7 @@ Page({
             wx.showToast({
                 title: '對不起, 錯了!',
                 icon: '',
-                image: '../../../img_temp/wrong.png',
+                image: '../../../resources/wrong.png',
                 duration: 1000,
                 mask: true,
                 success: function(res) {
@@ -95,7 +95,7 @@ Page({
                 wx.showToast({
                     title: '完成了!',
                     icon: '',
-                    image: '../../../img_temp/correct.png',
+                    image: '../../../resources/correct.png',
                     duration: 1500,
                     mask: true,
                     success: function(res) {

@@ -40,11 +40,11 @@
             <van-collapse-item name="{{index}}">
                 <block wx:if="{{item.correct == 1}}">
                     <view slot="title">
-                        <image src="../../../img_temp/result/like_16px.png" class="greenImage" /> {{index + 1}}.{{item.question_title}}</view>
+                        <image src="../../../resources/result/like_16px.png" class="greenImage" /> {{index + 1}}.{{item.question_title}}</view>
                 </block>
                 <block wx:else>
                     <view slot="title" class="red">
-                        <image src="../../../img_temp/result/wrong_16px.png" class="redImage" /> {{index + 1}}.{{item.question_title}}</view>
+                        <image src="../../../resources/result/wrong_16px.png" class="redImage" /> {{index + 1}}.{{item.question_title}}</view>
                 </block>
                 <view style="color:#2d8cf0;">article_id: {{item.article_id}}</view>
                 <view> answer: {{item.answer}} </view>

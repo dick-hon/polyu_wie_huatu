@@ -12,12 +12,6 @@ Page({
         json_questionRecord: {},
         json_index: 1
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
-    },
     onShow: function() {
         if (app.globalData.userInfo) {
             this.setData({
@@ -46,13 +40,15 @@ Page({
                 }
             })
         }
+        /*
         var u = this;
         app.func.requestUserData(function(u_info) {
-            // console.log("HERERERE");
+        
             u.setData({
                 userData: u_info
             })
         }, '1')
+        */
 
     },
     getUserInfo: function(e) {

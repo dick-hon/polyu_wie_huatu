@@ -45,7 +45,7 @@ Page({
             wx.showToast({
                 title: 'Primary 1 ONLY',
                 icon: '',
-                image: '../../img_temp/wrong.png',
+                image: '../../resources/wrong.png',
                 duration: 1500,
                 mask: true,
                 success: function(res) {}

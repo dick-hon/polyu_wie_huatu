@@ -4,13 +4,11 @@
         <view class="userinfo">
             <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
             <block wx:else>
-                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
                 <text class="userinfo-nickname">{{userInfo.nickName}}</text>
             </block>
         </view>
         <view>华图教育 - 微信小程序 DEMO </view>
-        <button bindtap='ifUserInDB'>getUserData</button>
-        <button bindtap='next'>Next</button>
-        <image src="../../img_temp/temp.jpg" />
+        <image src="../../resources/temp.jpg" />
     </view>
 <!-- </view> -->

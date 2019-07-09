@@ -24,18 +24,11 @@ Page({
     actionUnlike(e) {
         console.log("unlike!");
         console.log(e.currentTarget.dataset.id);
-        //to pass the corrsponding question result to db
-        //================================== TODO: get user_id
-        var temp = 1;
-        //console.log(this.data.article[e.currentTarget.dataset.id].article_id);
-        //console.log(temp);
-        //var submitData = [this.data.collections[e.currentTarget.dataset.id].article_id, temp];        
+        //to pass the corrsponding question result to db 
         var cancelData = e.currentTarget.dataset.id;
         app.func.cancelCollection(cancelData);
-        //update lastest collection_list
-        //=============================== TODO: get user_id 
-        // var temp = this.data.user_id;
-        var temp = 1;
+        //update lastest collection_list 
+        var temp = app.globalData.userID;
         var that = this;
         app.func.requestCollection(function (collections) {
             console.log(collections);

@@ -1,5 +1,5 @@
 # Huatu - 微信小程序 
-> This project aims to build a interactive learning platform for primary student in WeChat Mini Program. <br/>
+> This project aims to build an interactive learning platform for primary student in WeChat Mini Program. <br/>
 *Powered by PolyU WIE 2019 - Group H*
 
 ## Team List
@@ -8,6 +8,11 @@
 > CHIU Chak Pang <br/>
 > HON Chun Kin <br/>
 > MAK Tsz Hong <br/>
+
+## v1.2 (Beta Version)
+### v1.2
+> Prototype for handover
+> For back-end connection, please download the source code [Here](https://comppolyueduhk-my.sharepoint.com/:f:/g/personal/18001064d_comp_polyu_edu_hk/Eq-Sla5A9ZFJqQ3YLsqok14BOVz_MY__It-xELCJhsxWYw?e=coFx6V).
 
 ## v1.1 (Beta Version)
 ### v1.1.10
